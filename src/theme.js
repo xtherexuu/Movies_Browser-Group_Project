@@ -3,5 +3,6 @@ export const theme = {
       black: "#000000",
       whisper: "#F5F5FA",
       white: "#FFFFFF",
+      blue: "#0044CC",
     }
 }
