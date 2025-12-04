@@ -1,5 +1,5 @@
 import { ButtonBack, Header, Paragraph, Wrapper } from "./styled";
-import { ReactComponent as DangerIcon } from "../../images/dangerIcon.svg";
+import DangerIcon from "../../images/dangerIcon.svg?react";
 
 export const ErrorPage = () => (
     <Wrapper>
