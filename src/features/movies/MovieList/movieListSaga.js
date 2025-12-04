@@ -10,8 +10,8 @@ function* fetchMoviesHandler() {
         const MoviesDate = yield call(getPopularMovies);
         yield put(fetchMoviesSuccess(MoviesDate));
     } catch (error) {
-      yield put(fetchMoviesError());
-      yield call(alert, "Download failed, please try again or check your internet connection");
+        yield put(fetchMoviesError());
+        yield call(alert, "Download failed, please try again or check your internet connection");
     }
 }
 
