@@ -1,7 +1,17 @@
 export const theme = {
-    color: {
-      black: "#000000",
-      whisper: "#F5F5FA",
-      white: "#FFFFFF",
-    }
+  color: {
+    white: "#FFFFFF",
+    whisper: "#F5F5FA",
+    mystic: "#E4E6F0",
+    silver: "#C4C4C4",
+    waterloo: "#7E839A",
+    heather: "#BAC7D580",
+    black: "#000000",
+  },
+  fontWeight: {
+    light: 300,
+    regular: 400,
+    medium: 500,
+    semiBold: 600,
+  },
 }
