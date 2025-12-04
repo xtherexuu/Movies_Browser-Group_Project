@@ -11,7 +11,7 @@ export const Tile = styled.article`
   height: 100%;
   padding: 16px;
   border-radius: 5px;
-  box-shadow: 0px 4px 12px 0px #BAC7D580;
+  box-shadow: 0px 4px 12px 0px ${({ theme }) => theme.color.heather};
   display: grid;
   grid-template-rows: auto 1fr;
 `;
@@ -20,13 +20,13 @@ export const Poster = styled.img`
   height: 100%;
   width: 100%;
   border-radius: 5px;
-  background-color: silver;
+  background-color: ${({ theme }) => theme.color.silver};
 `;
 
 export const Title = styled.h2`
   line-height: 1.3;
-  font-weight: medium;
-  color: black;
+  font-weight: ${({ theme }) => theme.fontWeight.regular};
+  color: ${({ theme }) => theme.color.black};
   font-size: 22px;
   margin-top: 16px;
 `;
@@ -35,7 +35,7 @@ export const Year = styled.p`
   font-size: 16px;
   line-height: 1.5;
   font-weight: 400;
-  color: silver;
+  color: ${({ theme }) => theme.color.silver};
   margin: 8px 0;
 `
 export const Tags = styled.ul`
@@ -47,6 +47,7 @@ export const Tags = styled.ul`
 `;
 
 export const Tag = styled.li`
+  color: ${({ theme }) => theme.color.black};
   margin: 8px;
   padding: 8px 16px;
   font-size: 14px;
