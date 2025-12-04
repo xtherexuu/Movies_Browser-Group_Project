@@ -1,25 +1,39 @@
 import { TileLink, Tile, Title, Poster, Year, Tags, Tag, Rating, StarIcon, Rate, Votes } from './styled';
 import noMovieImage from "../../../images/noMovieImage.svg";
 import starIcon from "../../../images/starIcon.svg";
+import { Genres } from "../genres";
 
-export const MovieTile = () => {
+export const MovieTile = ({
+  poster,
+  title,
+  date,
+  id,
+  genres,
+  rate,
+  voteCount,
+}) => {
+  
+  const APIimage = "https://image.tmdb.org/t/p/w500/";
+  const movieGenres = Genres.filter((genre) => genres.includes(genre.id));
 
   return (
-    <TileLink>
+    <TileLink key={id}>
       <Tile>
         <Poster
-          src={noMovieImage}
+          src={poster ? `${APIimage}${poster}` : noMovieImage}
           alt=""
         />
-        <Title>Nazwa filmu</Title>
-        <Year>2020</Year>
+        <Title>{title}</Title>
+        <Year>{date}</Year>
         <Tags>
-          <Tag>Action</Tag>
+          {movieGenres.map((genre) => (
+            <Tag key={genre.id}>{genre.name}</Tag>
+          ))}
         </Tags>
         <Rating>
           <StarIcon src={starIcon} />
-          <Rate>10</Rate>
-          <Votes>78 votes</Votes>
+          <Rate>{rate}</Rate>
+          <Votes>{voteCount} votes</Votes>
         </Rating>
       </Tile>
     </TileLink>
