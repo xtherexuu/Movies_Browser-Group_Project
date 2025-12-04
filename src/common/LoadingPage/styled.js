@@ -14,7 +14,7 @@ export const Container = styled.div`
 export const Header = styled.h1`
     font-size: 36px;
     line-height: 1.2;
-    margin: 0 0 120px;
+    margin: 150px 0 0 276px;    
 `;
 
 export const IconWrapper = styled.div`
