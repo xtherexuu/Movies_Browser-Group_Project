@@ -1,14 +1,16 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
+import { Provider } from 'react-redux'
+import store from './store.js'
 import { HashRouter, Route, Routes } from "react-router";
 import App from "./App.jsx";
 
 createRoot(document.getElementById("root")).render(
-  <StrictMode>
+  <Provider store={store}>
     <HashRouter>
       <Routes>
         <Route path="/" element={<App />}></Route>
       </Routes>
     </HashRouter>
-  </StrictMode>
+  </Provider>
 );
