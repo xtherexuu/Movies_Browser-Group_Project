@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router";
 
 export const Wrapper = styled.article`
     margin-top: 274px;
@@ -6,6 +7,10 @@ export const Wrapper = styled.article`
     justify-items: center;
     text-align: center;
     grid-gap: 24px;
+
+    @media(max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
+        grid-gap: 16px;
+    }
 `;
 
 export const Header = styled.header`
@@ -21,12 +26,13 @@ export const Paragraph = styled.p`
     line-height: 1.3;
 `;
 
-export const ButtonBack = styled.a`
+export const ButtonBack = styled(Link)`
     text-decoration: none;
-    padding: 16px;
+    padding: 16px 24px;
     border-radius: 5px;
     font-weight: 700;
     font-size: 14px;
     color: ${({ theme }) => theme.color.white};
     background: ${({ theme }) => theme.color.blue};
+    text-align: center;
 `;

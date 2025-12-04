@@ -14,7 +14,14 @@ export const Container = styled.div`
 export const Header = styled.h1`
     font-size: 36px;
     line-height: 1.2;
-    margin: 150px 0 0 276px;    
+    margin: 150px 0 0 276px;
+
+    @media(max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 1.3;
+        margin: 166px 0 0 16px;
+    }
 `;
 
 export const IconWrapper = styled.div`
@@ -23,4 +30,8 @@ export const IconWrapper = styled.div`
 
 export const Icon = styled(LoadingIcon)`
     animation: ${rotate} 2s linear infinite;
+
+    @media(max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
+        height: 35px;
+    }
 `;
