@@ -12,12 +12,12 @@ export const MovieTile = ({
   rate,
   voteCount,
 }) => {
-  
+
   const APIimage = "https://image.tmdb.org/t/p/w500/";
   const movieGenres = Genres.filter((genre) => genres.includes(genre.id));
 
   return (
-    <TileLink key={id}>
+    <TileLink to={`/movie/?id=${id}`} key={id}>
       <Tile>
         <Poster
           src={poster ? `${APIimage}${poster}` : noMovieImage}
