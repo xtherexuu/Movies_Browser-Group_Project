@@ -1,6 +1,6 @@
 import { TileLink, Tile, Title, Poster, Year, Tags, Tag, Rating, StarIcon, Rate, Votes } from './styled';
 import noMovieImage from "../../../images/noMovieImage.svg";
-import starIcon from "../../../images/StarIcon.svg";
+import starIcon from "../../../images/starIcon.svg";
 
 export const MovieTile = () => {
 
