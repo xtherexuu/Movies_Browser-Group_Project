@@ -14,4 +14,9 @@ export const theme = {
     medium: 500,
     semiBold: 600,
   },
-}
+  breakPoint: {
+    small: "375px",
+    semiMedium: "630px",
+    medium: "850px",
+  },
+};
