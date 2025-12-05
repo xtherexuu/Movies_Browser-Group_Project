@@ -2,6 +2,7 @@ import SearchInput from "../../features/SearchInput";
 import {
   HeaderContent,
   Heading,
+  LinksContainer,
   NavContainer,
   StyledHeader,
   StyledIcon,
@@ -15,8 +16,10 @@ export default function Header() {
         <NavContainer>
           <StyledIcon />
           <Heading>Movies Browser</Heading>
-          <StyledLink to="/">MOVIES</StyledLink>
-          <StyledLink to="/people">PEOPLE</StyledLink>
+          <LinksContainer>
+            <StyledLink to="/">MOVIES</StyledLink>
+            <StyledLink to="/people">PEOPLE</StyledLink>
+          </LinksContainer>
         </NavContainer>
         <SearchInput />
       </HeaderContent>
