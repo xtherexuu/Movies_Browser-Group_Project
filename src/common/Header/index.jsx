@@ -1,3 +1,4 @@
+import SearchInput from "../../features/SearchInput";
 import {
   HeaderContent,
   Heading,
@@ -17,6 +18,7 @@ export default function Header() {
           <StyledLink to="/">MOVIES</StyledLink>
           <StyledLink to="/people">PEOPLE</StyledLink>
         </NavContainer>
+        <SearchInput />
       </HeaderContent>
     </StyledHeader>
   );
