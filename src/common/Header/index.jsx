@@ -9,7 +9,7 @@ import {
   StyledLink,
 } from "./styled";
 
-export default function Header() {
+const Header = () => {
   return (
     <StyledHeader>
       <HeaderContent>
@@ -25,4 +25,6 @@ export default function Header() {
       </HeaderContent>
     </StyledHeader>
   );
-}
+};
+
+export default Header;

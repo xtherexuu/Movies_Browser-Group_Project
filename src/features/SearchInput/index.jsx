@@ -5,7 +5,7 @@ import {
   StyledLoupeIcon,
 } from "./styled";
 
-export default function SearchInput() {
+const SearchInput = () => {
   return (
     <StyledInputWrapper>
       <SearchButton>
@@ -14,4 +14,6 @@ export default function SearchInput() {
       <StyledInput placeholder="Search for movies..." />
     </StyledInputWrapper>
   );
-}
+};
+
+export default SearchInput;

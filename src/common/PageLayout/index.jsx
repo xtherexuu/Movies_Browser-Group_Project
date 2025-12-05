@@ -2,11 +2,13 @@ import { Layout } from "./styled";
 import Header from "../Header";
 import { Outlet } from "react-router";
 
-export default function PageLayout() {
+const PageLayout = () => {
   return (
     <Layout>
       <Header />
       <Outlet />
     </Layout>
   );
-}
+};
+
+export default PageLayout;

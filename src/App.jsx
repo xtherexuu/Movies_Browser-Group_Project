@@ -1,7 +1,7 @@
 import { MovieListPage } from "./features/movies/MovieList";
 
-function App() {
+const App = () => {
   return <MovieListPage />;
-}
+};
 
 export default App;
