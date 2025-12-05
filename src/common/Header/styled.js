@@ -13,6 +13,8 @@ export const HeaderContent = styled.div`
   max-width: 1368px;
   width: 100%;
   padding: 20px;
+  display: flex;
+  justify-content: space-between;
 `;
 
 export const NavContainer = styled.nav`
