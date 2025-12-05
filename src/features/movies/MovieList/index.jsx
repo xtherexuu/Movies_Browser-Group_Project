@@ -10,7 +10,9 @@ export const MovieListPage = () => {
       <MoviesContainer>
         <MovieTile />
       </MoviesContainer>
-      <Paginator pagesAmount={pageAmount} />
+      <div style={{ padding: "50px" }}>
+        <Paginator pagesAmount={pageAmount} />
+      </div>
     </Wrapper>
   );
 };

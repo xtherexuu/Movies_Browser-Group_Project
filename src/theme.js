@@ -3,6 +3,7 @@ export const theme = {
     white: "#FFFFFF",
     whisper: "#F5F5FA",
     mystic: "#E4E6F0",
+    azureish: "#D6E4FF",
     silver: "#C4C4C4",
     waterloo: "#7E839A",
     heather: "#BAC7D580",
@@ -14,4 +15,4 @@ export const theme = {
     medium: 500,
     semiBold: 600,
   },
-}
+};

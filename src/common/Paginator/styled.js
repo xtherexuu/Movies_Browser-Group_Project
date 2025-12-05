@@ -19,9 +19,14 @@ export const PaginatorSite = styled(PaginatorText)`
   color: ${({ theme }) => theme.color.black};
 `;
 
-export const PaginatorButton = styled(Link)``;
+export const PaginatorButton = styled(Link)`
+  font-size: 14px;
+  background-color: ${({ theme }) => theme.color.azureish};
+`;
 
 export const StyledArrowLeft = styled(ArrowLeft)`
+  width: 7px;
+  height: 11px;
   ${({ $secound }) =>
     $secound &&
     css`
@@ -30,6 +35,8 @@ export const StyledArrowLeft = styled(ArrowLeft)`
 `;
 
 export const StyledArrowRight = styled(ArrowRight)`
+  width: 7px;
+  height: 11px;
   ${({ $secound }) =>
     $secound &&
     css`

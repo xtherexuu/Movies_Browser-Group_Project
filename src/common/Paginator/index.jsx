@@ -39,3 +39,5 @@ export const Paginator = ({ pagesAmount }) => {
     </StyledPaginator>
   );
 };
+
+export default Paginator;
