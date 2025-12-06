@@ -6,6 +6,8 @@ export const StyledPaginator = styled.div`
   display: flex;
   gap: 12px;
   align-items: center;
+  justify-content: center;
+  margin: 40px 0 100px;
 `;
 
 export const PaginatorText = styled.p`
