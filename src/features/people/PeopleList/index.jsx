@@ -1,5 +1,6 @@
 import { PersonTile } from "../PersonTile";
 import { Wrapper, Header, PeopleContainer } from "./styled"
+import { Paginator } from "../../../common/Paginator";
 
 export const PeopleListPage = () => {
   return (
@@ -8,6 +9,7 @@ export const PeopleListPage = () => {
       <PeopleContainer>
         <PersonTile />
       </PeopleContainer>
+      <Paginator />
     </Wrapper>
   )
 };
