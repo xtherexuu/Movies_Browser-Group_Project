@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
+  flex-grow: 1;
   width: 100%;
   max-width: 1368px;
   margin: auto;

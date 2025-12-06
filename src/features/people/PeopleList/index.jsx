@@ -5,8 +5,9 @@ export const PeopleListPage = () => {
   return (
     <Wrapper>
       <Header>Popular people</Header>
-      <PeopleContainer />
-      <PersonTile />
+      <PeopleContainer>
+        <PersonTile />
+      </PeopleContainer>
     </Wrapper>
   )
 };
