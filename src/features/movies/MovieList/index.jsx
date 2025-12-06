@@ -19,7 +19,8 @@ export const MovieListPage = () => {
   }, []);
 
   if (status === "success") {
-    const pagesAmount = data.total_pages;
+    // API page limit 500
+    const pagesAmount = 500;
     console.log(pagesAmount);
 
     return (
