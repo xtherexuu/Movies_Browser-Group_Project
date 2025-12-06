@@ -7,7 +7,7 @@ import {
 } from "./movieListSlice";
 import { Header, MoviesContainer, Wrapper } from "./styled";
 import { MovieTile } from "../MovieTile";
-import { Pagination } from "../../../common/Paginator";
+import { Paginator } from "../../../common/Paginator";
 
 export const MovieListPage = () => {
   const status = useSelector(selectMoviesStatus);
@@ -18,7 +18,10 @@ export const MovieListPage = () => {
     dispatch(fetchMovies());
   }, []);
 
-  if (status === "success")
+  if (status === "success") {
+    const pagesAmount = data.total_pages;
+    console.log(pagesAmount);
+
     return (
       <Wrapper>
         <Header>Popular movies</Header>
@@ -36,7 +39,8 @@ export const MovieListPage = () => {
             />
           ))}
         </MoviesContainer>
-        <Pagination />
+        <Paginator pagesAmount={pagesAmount} />
       </Wrapper>
     );
+  };
 };
