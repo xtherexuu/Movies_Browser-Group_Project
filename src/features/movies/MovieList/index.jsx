@@ -8,6 +8,7 @@ import {
 import { Header, MoviesContainer, Wrapper } from "./styled";
 import { MovieTile } from "../MovieTile";
 import { Paginator } from "../../../common/Paginator";
+import { LoadingPage } from "../../../common/LoadingPage";
 
 export const MovieListPage = () => {
   const status = useSelector(selectMoviesStatus);
@@ -17,6 +18,12 @@ export const MovieListPage = () => {
   useEffect(() => {
     dispatch(fetchMovies());
   }, []);
+
+  if (status == "loading") {
+    return (
+      <LoadingPage />
+    )
+  }
 
   if (status === "success") {
     // API page limit 500
