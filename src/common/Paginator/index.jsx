@@ -43,7 +43,10 @@ export const Paginator = ({ pagesAmount }) => {
       <PaginatorButton
         onClick={() => {
           setSearchParams(
-            getNewSearchParams(searchParams, ["page", `${+currnetPage + 1}`])
+            getNewSearchParams(searchParams, [
+              "page",
+              `${+currnetPage || 1 + 1}`,
+            ])
           );
         }}
         disabled={+currnetPage === +pagesAmount}
