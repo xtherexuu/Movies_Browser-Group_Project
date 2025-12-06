@@ -25,17 +25,19 @@ export const getPopularMovies = async () => {
   }
 };
 
-// fetch
-//
-//export const getPopularMovies = async () => {
-//  try {
-//    const response = await fetch(`${APIbaseURL}/movie/popular?api_key=${APIkey}&language=en-US`);
-//    if (!response.ok) {
-//      throw new Error("An error occurred while searching movies.");
-//    }
-//    const data = await response.json();
-//    return data;
-//  } catch (error) {
-//    console.error(error);
-//  }
-//};
+export const getPopularPeople = async () => {
+  try {
+    const response = await apiService.get(`${popularPeople}`,
+      {
+        params: {
+          api_key: `${APIkey}`,
+          language: `${APIlanguage}`,
+        },
+      });
+    return response.data;
+  }
+  catch (error) {
+    console.error("Error fetching movies", error);
+    return [];
+  }
+};
