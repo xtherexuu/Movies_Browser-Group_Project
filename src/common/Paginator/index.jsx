@@ -45,7 +45,7 @@ export const Paginator = ({ pagesAmount }) => {
           setSearchParams(
             getNewSearchParams(searchParams, [
               "page",
-              `${+currnetPage || 1 + 1}`,
+              `${(+currnetPage || 1) + 1}`,
             ])
           );
         }}
