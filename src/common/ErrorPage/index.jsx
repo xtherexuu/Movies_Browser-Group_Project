@@ -9,6 +9,6 @@ export const ErrorPage = () => (
             Please check your network&nbsp;connection<br />
             and try again
         </Paragraph>
-        <ButtonBack to="/movies">Back to home page</ButtonBack>
+        <ButtonBack to="/">Back to home page</ButtonBack>
     </Wrapper>
 );
