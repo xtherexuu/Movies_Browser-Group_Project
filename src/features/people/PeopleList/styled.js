@@ -14,8 +14,8 @@ export const Header = styled.h1`
   margin-bottom: 24px;
 `;
 
-export const MoviesContainer = styled.div`
+export const PeopleContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(316px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(208px, 1fr));
   gap: 24px;
 `;

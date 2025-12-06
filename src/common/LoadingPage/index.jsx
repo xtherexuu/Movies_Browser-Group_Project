@@ -1,8 +1,8 @@
 import { Container, Header, Icon, IconWrapper } from "./styled";
 
-export const LoadingPage = () => (
+export const LoadingPage = ({ title }) => (
     <Container>
-        <Header>Search results for</Header>
+        <Header>{title && <>Search results for "{title}"</>}</Header>
         <IconWrapper>
             <Icon />
         </IconWrapper>
