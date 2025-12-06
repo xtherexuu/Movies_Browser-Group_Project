@@ -1,6 +1,10 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchMovies, selectMovies, selectMoviesStatus } from "./movieListSlice"
+import {
+  fetchMovies,
+  selectMovies,
+  selectMoviesStatus,
+} from "./movieListSlice";
 import { Header, MoviesContainer, Wrapper } from "./styled";
 import { MovieTile } from "../MovieTile";
 
@@ -32,5 +36,5 @@ export const MovieListPage = () => {
           ))}
         </MoviesContainer>
       </Wrapper>
-    )
+    );
 };

@@ -3,10 +3,13 @@ export const theme = {
     white: "#FFFFFF",
     whisper: "#F5F5FA",
     mystic: "#E4E6F0",
+    azureish: "#D6E4FF",
+    blue: "#0044CC",
     silver: "#C4C4C4",
     waterloo: "#7E839A",
     heather: "#BAC7D580",
     woodstroke: "#18181B",
+    darkGray: "#333333",
     black: "#000000",
   },
   fontWeight: {
@@ -17,7 +20,7 @@ export const theme = {
   },
   breakPoint: {
     small: "375px",
-    semiMedium: "630px",
+    semiMedium: "660px",
     medium: "850px",
   },
 };
