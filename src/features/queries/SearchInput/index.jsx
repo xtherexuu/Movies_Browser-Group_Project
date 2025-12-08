@@ -18,6 +18,13 @@ const SearchInput = () => {
   const location = useLocation();
 
   useEffect(() => {
+    const searchQuery = searchParams.get("s");
+    if (searchQuery) {
+      setInputValue(searchQuery);
+    }
+  }, [searchParams]);
+
+  useEffect(() => {
     dispatch(setSearchInputValue(inputValue));
   }, [inputValue]);
 
