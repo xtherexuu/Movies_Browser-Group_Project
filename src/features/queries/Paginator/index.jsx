@@ -8,7 +8,7 @@ import {
   StyledArrowRight,
   StyledPaginator,
 } from "./styled";
-import getNewSearchParams from "../../getNewSearchParams";
+import getNewSearchParams from "../../../getNewSearchParams";
 
 export const Paginator = ({ pagesAmount }) => {
   let [searchParams, setSearchParams] = useSearchParams();
