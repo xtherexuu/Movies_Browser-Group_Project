@@ -9,15 +9,32 @@ import {
   StyledPaginator,
 } from "./styled";
 import getNewSearchParams from "../../../getNewSearchParams";
+import { useDispatch } from "react-redux";
+import { setPage } from "../queriesSlice";
+import { useEffect } from "react";
 
 export const Paginator = ({ pagesAmount }) => {
   let [searchParams, setSearchParams] = useSearchParams();
   let currnetPage = searchParams.get("page");
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    const pageQuery = searchParams.get("page");
+    if (pageQuery) {
+      dispatch(setPage(pageQuery));
+    }
+  }, []);
+
+  function onButtonClick([key, value]) {
+    setSearchParams(getNewSearchParams(searchParams, [key, value]));
+    dispatch(setPage(value));
+  }
+
   return (
     <StyledPaginator>
       <PaginatorButton
         onClick={() => {
-          setSearchParams(getNewSearchParams(searchParams, ["page", "1"]));
+          onButtonClick(["page", "1"]);
         }}
         disabled={currnetPage ? +currnetPage === 1 : true}
       >
@@ -27,9 +44,7 @@ export const Paginator = ({ pagesAmount }) => {
       </PaginatorButton>
       <PaginatorButton
         onClick={() => {
-          setSearchParams(
-            getNewSearchParams(searchParams, ["page", `${+currnetPage - 1}`])
-          );
+          onButtonClick(["page", `${+currnetPage - 1}`]);
         }}
         disabled={currnetPage ? +currnetPage === 1 : true}
       >
@@ -42,12 +57,7 @@ export const Paginator = ({ pagesAmount }) => {
       </PaginatorText>
       <PaginatorButton
         onClick={() => {
-          setSearchParams(
-            getNewSearchParams(searchParams, [
-              "page",
-              `${(+currnetPage || 1) + 1}`,
-            ])
-          );
+          onButtonClick(["page", `${(+currnetPage || 1) + 1}`]);
         }}
         disabled={+currnetPage === +pagesAmount}
       >
@@ -56,9 +66,7 @@ export const Paginator = ({ pagesAmount }) => {
       </PaginatorButton>
       <PaginatorButton
         onClick={() => {
-          setSearchParams(
-            getNewSearchParams(searchParams, ["page", `${pagesAmount}`])
-          );
+          onButtonClick(["page", `${pagesAmount}`]);
         }}
         disabled={+currnetPage === +pagesAmount}
       >
