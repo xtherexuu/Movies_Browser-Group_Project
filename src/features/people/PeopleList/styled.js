@@ -6,7 +6,7 @@ export const Wrapper = styled.div`
   max-width: 1368px;
   margin: auto;
 
-  @media (max-width: ${({ theme }) => theme.breakPoint.small}px) {
+  @media (max-width: ${({ theme }) => theme.breakPoint.small}) {
     max-width: 320px;
     width: 100%;
     margin: 24px auto;
@@ -20,7 +20,7 @@ export const Header = styled.h1`
   line-height: 1.2;
   margin-bottom: 24px;
 
-  @media (max-width: ${({ theme }) => theme.breakPoint.small}px) {
+  @media (max-width: ${({ theme }) => theme.breakPoint.small}) {
     font-size: 18px;
     margin-bottom: 12px;
   }
@@ -31,7 +31,7 @@ export const PeopleContainer = styled.div`
   grid-template-columns: repeat(auto-fill, minmax(198px, 1fr));
   gap: 24px;
 
-   @media (max-width: ${({ theme }) => theme.breakPoint.small}px) {
+   @media (max-width: ${({ theme }) => theme.breakPoint.small}) {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr);
