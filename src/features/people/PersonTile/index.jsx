@@ -1,12 +1,20 @@
 import { TileLink, Tile, Picture, Name } from "./styled";
 import noPersonImage from "../../../images/noPersonImage.svg"
+import { APIimage } from "../../getData";
 
-export const PersonTile = () => {
+export const PersonTile = (
+  id,
+  name,
+  profile,
+) => {
   return (
-    <TileLink>
+    <TileLink to={`/person/?id=${id}`} key={id}>
       <Tile>
-        <Picture src={noPersonImage} />
-        <Name>Full Name</Name>
+        <Picture 
+          src={profile ? `${APIimage}${profile}` : noPersonImage}
+          alt={name}
+        />
+        <Name>{name}</Name>
       </Tile>
     </TileLink>
   )
