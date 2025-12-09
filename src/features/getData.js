@@ -6,6 +6,8 @@ const APIlanguage = "en_US";
 const popularMovies = "/movie/popular";
 const popularPeople = "/person/popular";
 
+const APIimage = "https://image.tmdb.org/t/p/w500/";
+
 const apiService = axios.create({ baseURL: `${APIbaseURL}` });
 
 export const getPopularMovies = async () => {
