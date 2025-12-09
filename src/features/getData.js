@@ -6,7 +6,8 @@ const APIlanguage = "en_US";
 const popularMovies = "/movie/popular";
 const popularPeople = "/person/popular";
 
-const APIimage = "https://image.tmdb.org/t/p/w500/";
+export const imagesAPIw400 = "https://image.tmdb.org/t/p/w400/";
+export const imagesAPIw200 = "https://image.tmdb.org/t/p/w200/";
 
 const apiService = axios.create({ baseURL: `${APIbaseURL}` });
 
