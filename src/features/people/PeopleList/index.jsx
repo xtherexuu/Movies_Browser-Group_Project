@@ -37,13 +37,14 @@ export const PeopleListPage = () => {
       <Wrapper>
         <Header>{pageTitle}</Header>
         <PeopleContainer>
-          {data.result.map((person) => 
+          {data.results.map((person) => (
             <PersonTile 
               id={person.id}
+              key={`${person.id}${person.index}`}
               name={person.name}
-              profile={movie.profile_path}
+              profile={person.profile_path}
             />
-          )}
+          ))}
         </PeopleContainer>
         <Paginator pagesAmount={pagesAmount} />
       </Wrapper>
