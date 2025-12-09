@@ -8,7 +8,7 @@ export const Wrapper = styled.article`
     text-align: center;
     grid-gap: 24px;
 
-    @media(max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
+    @media(max-width: ${({ theme }) => theme.breakPoint.medium}px) {
         grid-gap: 16px;
     }
 `;
@@ -35,4 +35,5 @@ export const ButtonBack = styled(Link)`
     color: ${({ theme }) => theme.color.white};
     background: ${({ theme }) => theme.color.blue};
     text-align: center;
+    font-family: "Open Sans", sans-serif;
 `;
