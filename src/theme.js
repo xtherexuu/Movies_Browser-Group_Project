@@ -7,6 +7,7 @@ export const theme = {
     blue: "#0044CC",
     silver: "#C4C4C4",
     waterloo: "#7E839A",
+    stormGray: "#74788B",
     heather: "#BAC7D580",
     woodstroke: "#18181B",
     darkGray: "#333333",
