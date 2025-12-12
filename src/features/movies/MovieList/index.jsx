@@ -7,7 +7,7 @@ import {
 } from "./movieListSlice";
 import { Header, MoviesContainer, Wrapper } from "./styled";
 import { MovieTile } from "../MovieTile";
-import { Paginator } from "../../../common/Paginator";
+import { Paginator } from "../../queries/Paginator";
 
 export const MovieListPage = () => {
   const status = useSelector(selectMoviesStatus);
@@ -43,5 +43,5 @@ export const MovieListPage = () => {
         <Paginator pagesAmount={pagesAmount} />
       </Wrapper>
     );
-  };
+  }
 };

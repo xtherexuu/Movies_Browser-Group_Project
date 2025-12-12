@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import LoupeIcon from "../../images/loupeIcon.svg?react";
+import LoupeIcon from "../../../images/loupeIcon.svg?react";
 import { Link } from "react-router";
 
 export const StyledInputWrapper = styled.div`

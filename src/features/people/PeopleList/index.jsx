@@ -1,6 +1,6 @@
 import { PersonTile } from "../PersonTile";
-import { Wrapper, Header, PeopleContainer } from "./styled"
-import { Paginator } from "../../../common/Paginator";
+import { Wrapper, Header, PeopleContainer } from "./styled";
+import { Paginator } from "../../../features/queries/Paginator";
 
 export const PeopleListPage = () => {
   // API page limit
@@ -14,5 +14,5 @@ export const PeopleListPage = () => {
       </PeopleContainer>
       <Paginator pagesAmount={pagesAmount} />
     </Wrapper>
-  )
+  );
 };
