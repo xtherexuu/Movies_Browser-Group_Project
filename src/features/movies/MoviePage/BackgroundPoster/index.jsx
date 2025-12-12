@@ -1,6 +1,6 @@
 import { 
-  Top, 
   Wrapper, 
+  PosterSpace, 
   MainInfo, 
   Title, 
   Rating, 
@@ -9,25 +9,33 @@ import {
   RateMax, 
   StyledStarIcon,
   Votes,
+  PosterBig,
 } from "./styled";
+import { imagesFullApi } from "../../../getData";
 
-export const Header = () => {
+export const Header = ({
+  poster,
+  title,
+  rate,
+  voteCount
+}) => {
 
   return (
-    <Top>
-      <Wrapper>
+    <Wrapper>
+      <PosterSpace>
+        <PosterBig src={`${imagesFullApi}/original${poster}`} />
         <MainInfo>
-          <Title>Movie long title</Title>
+          <Title>{title}</Title>
           <Rating>
             <RateContainer>
               <StyledStarIcon />
-              <Rate>7,8</Rate>
+              <Rate>{rate}</Rate>
               <RateMax>/ 10</RateMax>
             </RateContainer>
-            <Votes>335 votes</Votes>
+            <Votes>{voteCount} votes</Votes>
           </Rating>
         </MainInfo>
-      </Wrapper>
-    </Top>
+      </PosterSpace>
+    </Wrapper>
   )
 };
