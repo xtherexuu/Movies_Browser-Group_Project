@@ -11,25 +11,31 @@ import {
 } from "./styled";
 import noMovieImage from "../../../../images/noMovieImage.svg"; 
 
-export const AboutMovieTile = () => {
+const imagesAPIw400 = "https://image.tmdb.org/t/p/w400";
+
+export const AboutMovieTile = ({
+  aboutMovie,
+  poster,
+  title,
+  date,
+  genres,
+  productionCountry,
+  release,
+  rate,
+  voteCount,
+  overview,
+}) => {
   return (
     <Container>
       <Tile>
-        <Image src={noMovieImage} alt="" />
+        <Image src={poster ? `${imagesAPIw400}${poster}` : noMovieImage} alt="" />
         <Content>
-          <Title>
-            Mulan
-          </Title>
-          <Year>
-            2020
-          </Year>
+          <Title>{title}</Title>
+          <Year>{date ? date.toString().slice(0, 4) : null}</Year>
           <Tags>
             <Tag>Action</Tag>
           </Tags>
-          <Description>
-            A young Chinese maiden disguises herself as a male warrior in order to save her father.
-            Disguises herself as a male warrior in order to save her father.  A young Chinese maiden disguises herself as a male warrior in order to save her father.
-          </Description>
+          <Description>{overview}</Description>
         </Content>
       </Tile>
     </Container>
