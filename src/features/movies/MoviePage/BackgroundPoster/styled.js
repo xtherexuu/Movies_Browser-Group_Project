@@ -1,8 +1,26 @@
 import styled from "styled-components";
 import StarIcon from "../../../../images/starIcon.svg?react";
 
-export const Top = styled.section`
+export const Wrapper = styled.section`
+ display: flex;
+ flex-grow: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+  position: relative;
   height: 770px;
+`;
+
+export const PosterSpace = styled.div`
+ width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  //height: 770px;
+  max-width: 1368px;
+  position: relative;
   background: 
     linear-gradient(
       189.44deg, 
@@ -41,18 +59,17 @@ export const Top = styled.section`
     );
 `;
 
-export const Wrapper = styled.div`
-  margin: auto;
-  max-width: 1368px;
-`;
-
 export const PosterBig = styled.img`
-
+  max-width: 100%;
+  height: auto;
+  z-index: -1;
 `;
 
 export const MainInfo = styled.div`
   color: ${({ theme }) => theme.color.white};
-  padding-top: 538px;
+  position: absolute;
+  left: 14%;
+  bottom: 7%;
 `;
 
 export const Title = styled.h1`
