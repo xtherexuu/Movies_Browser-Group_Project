@@ -14,7 +14,8 @@ export const Tile = styled.article`
   box-shadow: 0px 4px 12px 0px ${({ theme }) => theme.color.heather};
   display: grid;
   grid-template-rows: auto 1fr;
-  transition: 0.3s;
+  transition: 0.2s;
+  
   &:hover {
     box-shadow: 0px 4px 12px 0px ${({ theme }) => theme.color.darkGray};
   }
