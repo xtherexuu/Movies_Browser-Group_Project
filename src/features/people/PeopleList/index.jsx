@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { useLocation } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
 import {
   fetchPeople,
@@ -11,17 +12,31 @@ import { Paginator } from "../../../common/Paginator";
 import { LoadingPage } from "../../../common/LoadingPage";
 import { ErrorPage } from "../../../common/ErrorPage";
 
+export const useQueryParameters = (key) => {
+  const location = useLocation();
+  const searchParams = new URLSearchParams(location.search);
+  return searchParams.get(key);
+};
+
 export const PeopleListPage = () => {
   const status = useSelector(selectPeopleStatus);
   const data = useSelector(selectPeople);
   const dispatch = useDispatch();
-
+  const page = useQueryParameters("page");
   // API page limit
   const APIpagesLimit = "500";
   const pageTitle = "Popular people";
 
+  const setPage = (page) => {
+    if (page === null) {
+      return 1 
+    } else {
+      return page
+    }
+  };
+
   useEffect(() => {
-    dispatch(fetchPeople());
+    dispatch(fetchPeople(setPage(page)));
   }, []);
 
   if (status === "loading") {
