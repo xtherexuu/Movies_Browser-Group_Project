@@ -6,6 +6,7 @@ const APIlanguage = "en_US";
 const popularMovies = "/movie/popular";
 const popularPeople = "/person/popular";
 
+
 export const imagesAPIw400 = "https://image.tmdb.org/t/p/w400/";
 export const imagesAPIw200 = "https://image.tmdb.org/t/p/w200/";
 
@@ -28,13 +29,14 @@ export const getPopularMovies = async () => {
   }
 };
 
-export const getPopularPeople = async () => {
+export const getPopularPeople = async (page) => {
   try {
     const response = await apiService.get(`${popularPeople}`,
       {
         params: {
           api_key: `${APIkey}`,
           language: `${APIlanguage}`,
+          page: `${page}`,
         },
       });
     return response.data;
