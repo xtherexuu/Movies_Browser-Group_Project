@@ -1,4 +1,4 @@
-import { TileLink, Tile, Title, Poster, Year, Tags, Tag, Rating, StarIcon, Rate, Votes } from './styled';
+import { TileLink, Tile, Title, Poster, Year, Tags, Tag, Rating, StarIcon, Rate, Votes, Details } from './styled';
 import noMovieImage from "../../../images/noMovieImage.svg";
 import starIcon from "../../../images/starIcon.svg";
 import { Genres } from "../genres";
@@ -23,18 +23,20 @@ export const MovieTile = ({
           src={poster ? `${APIimage}${poster}` : noMovieImage}
           alt=""
         />
-        <Title>{title}</Title>
-        <Year>{date}</Year>
-        <Tags>
-          {movieGenres.map((genre) => (
-            <Tag key={genre.id}>{genre.name}</Tag>
-          ))}
-        </Tags>
-        <Rating>
-          <StarIcon src={starIcon} />
-          <Rate>{rate}</Rate>
-          <Votes>{voteCount} votes</Votes>
-        </Rating>
+        <Details>
+          <Title>{title}</Title>
+          <Year>{date}</Year>
+          <Tags>
+            {movieGenres.map((genre) => (
+              <Tag key={genre.id}>{genre.name}</Tag>
+            ))}
+          </Tags>
+          <Rating>
+            <StarIcon src={starIcon} />
+            <Rate>{rate}</Rate>
+            <Votes>{voteCount} votes</Votes>
+          </Rating>
+        </Details>
       </Tile>
     </TileLink>
   )
