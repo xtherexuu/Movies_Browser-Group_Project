@@ -4,10 +4,10 @@ import { getPopularPeople } from "../getData";
 
 const loadingDelay = 2_000;
 
-function* fetchPeopleHandler() {
+function* fetchPeopleHandler({ payload }) {
     try {
         yield delay(loadingDelay); //just to demo the loading
-        const PeopleDate = yield call(getPopularPeople);
+        const PeopleDate = yield call(getPopularPeople, payload);
         yield put(fetchPeopleSuccess(PeopleDate));
     } catch (error) {
         yield put(fetchPeopleError());

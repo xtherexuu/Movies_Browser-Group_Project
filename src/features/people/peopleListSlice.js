@@ -7,9 +7,10 @@ const peopleListSlice = createSlice({
     status: "initial",
   },
   reducers: {
-    fetchPeople: () => ({
+    fetchPeople: (_, {payload: page}) => ({
       status: "loading",
       peopleDate: null,
+      page
     }),
     fetchPeopleSuccess: (_, { payload: peopleDate }) => ({
       status: "success",
