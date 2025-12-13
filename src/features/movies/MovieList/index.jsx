@@ -4,7 +4,7 @@ import {
   fetchMovies,
   selectMovies,
   selectMoviesStatus,
-} from "./movieListSlice";
+} from "../moviesListSlice";
 import { Header, MoviesContainer, Wrapper } from "./styled";
 import { MovieTile } from "../MovieTile";
 import { Paginator } from "../../../common/Paginator";
