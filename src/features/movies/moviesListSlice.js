@@ -7,9 +7,10 @@ const movieListSlice = createSlice({
     status: "initial",
   },
   reducers: {
-    fetchMovies: () => ({
+    fetchMovies: (page) => ({
       status: "loading",
       moviesDate: null,
+      page
     }),
     fetchMoviesSuccess: (_, { payload: moviesDate }) => ({
       status: "success",
