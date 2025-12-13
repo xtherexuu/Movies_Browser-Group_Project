@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.main`
   flex-grow: 1;
   width: 100%;
   max-width: 1368px;
@@ -14,7 +14,7 @@ export const Header = styled.h1`
   margin-bottom: 24px;
 `;
 
-export const MoviesContainer = styled.div`
+export const MoviesContainer = styled.section`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(316px, 1fr));
   gap: 24px;
