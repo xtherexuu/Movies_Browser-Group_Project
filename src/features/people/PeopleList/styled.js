@@ -9,7 +9,6 @@ export const Wrapper = styled.div`
   @media (max-width: ${({ theme }) => theme.breakPoint.small}) {
     max-width: 320px;
     width: 100%;
-    margin: 24px auto;
     padding: 0 16px;
   }
 `;
@@ -18,11 +17,12 @@ export const Header = styled.h1`
   font-size: 36px;
   color: ${({ theme }) => theme.color.woodsmoke};
   line-height: 1.2;
-  margin-bottom: 24px;
+  margin-top: 54px;
+  margin-left: 16px;
 
   @media (max-width: ${({ theme }) => theme.breakPoint.small}) {
-    font-size: 18px;
-    margin-bottom: 12px;
+    font-size: 20px;
+    margin-top: 24px;
   }
 `;
 
@@ -30,6 +30,7 @@ export const PeopleContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(198px, 1fr));
   gap: 24px;
+  margin: 16px;
 
    @media (max-width: ${({ theme }) => theme.breakPoint.small}) {
     display: grid;
