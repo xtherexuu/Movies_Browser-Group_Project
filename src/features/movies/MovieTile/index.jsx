@@ -25,7 +25,7 @@ export const MovieTile = ({
         />
         <Details>
           <Title>{title}</Title>
-          <Year>{date}</Year>
+          <Year>{date ? date.toString().slice(0, 4) : null}</Year>
           <Tags>
             {movieGenres.map((genre) => (
               <Tag key={genre.id}>{genre.name}</Tag>
