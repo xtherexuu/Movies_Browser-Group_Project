@@ -11,6 +11,7 @@ export const theme = {
     woodstroke: "#18181B",
     darkGray: "#333333",
     black: "#000000",
+    blue: "#0044CC",
   },
   fontWeight: {
     light: 300,
@@ -22,5 +23,8 @@ export const theme = {
     small: "375px",
     semiMedium: "660px",
     medium: "850px",
+  },
+  breakpoints: {
+    mobileMax: 767,
   },
 };
