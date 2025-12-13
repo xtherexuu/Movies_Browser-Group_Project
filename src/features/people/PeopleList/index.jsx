@@ -17,7 +17,7 @@ export const PeopleListPage = () => {
   const dispatch = useDispatch();
 
   // API page limit
-  const pagesAmount = "500";
+  const APIpagesLimit = "500";
   const pageTitle = "Popular people";
 
   useEffect(() => {
@@ -33,12 +33,19 @@ export const PeopleListPage = () => {
   }
 
   if (status === "success") {
+    const pagesAmount = data.total_pages;
+    const setPagesAmountMax = () => {
+      if (pagesAmount < APIpagesLimit)
+        return pagesAmount;
+      else return APIpagesLimit;
+    }
+
     return (
       <Wrapper>
         <Header>{pageTitle}</Header>
         <PeopleContainer>
           {data.results.map((person) => (
-            <PersonTile 
+            <PersonTile
               id={person.id}
               key={`${person.id}${person.index}`}
               name={person.name}
@@ -46,7 +53,7 @@ export const PeopleListPage = () => {
             />
           ))}
         </PeopleContainer>
-        <Paginator pagesAmount={pagesAmount} />
+        <Paginator pagesAmount={setPagesAmountMax()} />
       </Wrapper>
     )
   }
