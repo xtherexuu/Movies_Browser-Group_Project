@@ -30,7 +30,6 @@ export const Picture = styled.img`
 
   @media (max-width: ${({ theme }) => theme.breakPoint.small}) {
     width: 120px;
-    padding: 178px;
   }
 `;
 
