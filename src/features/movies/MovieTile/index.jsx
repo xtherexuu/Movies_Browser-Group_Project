@@ -33,7 +33,7 @@ export const MovieTile = ({
           </Tags>
           <Rating>
             <StarIcon src={starIcon} />
-            <Rate>{rate}</Rate>
+            <Rate>{rate ? rate.toString().replace('.', ',') : null}</Rate>
             <Votes>{voteCount} votes</Votes>
           </Rating>
         </Details>
