@@ -17,7 +17,7 @@ export const MovieListPage = () => {
   const dispatch = useDispatch();
 
   // API page limit 500
-  const pagesAmount = 500;
+  const APIpagesLimit = 500;
   const pageTitle = "Popular movies";
 
   useEffect(() => {
@@ -33,6 +33,13 @@ export const MovieListPage = () => {
   }
 
   if (status === "success") {
+    const pagesAmount = data.total_pages;
+    const setPagesAmountMax = () => {
+      if (pagesAmount < APIpagesLimit)
+        return pagesAmount;
+      else return APIpagesLimit;
+    };
+
     return (
       <Wrapper>
         <Header>{pageTitle}</Header>
@@ -50,7 +57,7 @@ export const MovieListPage = () => {
             />
           ))}
         </MoviesContainer>
-        <Paginator pagesAmount={pagesAmount} />
+        <Paginator pagesAmount={setPagesAmountMax()} />
       </Wrapper>
     );
   };
