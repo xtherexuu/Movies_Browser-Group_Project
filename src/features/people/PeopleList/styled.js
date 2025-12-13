@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.main`
   flex-grow: 1;
   width: 100%;
   max-width: 1368px;
@@ -26,7 +26,7 @@ export const Header = styled.h1`
   }
 `;
 
-export const PeopleContainer = styled.div`
+export const PeopleContainer = styled.section`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(198px, 1fr));
   gap: 24px;
