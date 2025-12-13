@@ -8,13 +8,14 @@ const popularPeople = "/person/popular";
 
 const apiService = axios.create({ baseURL: `${APIbaseURL}` });
 
-export const getPopularMovies = async () => {
+export const getPopularMovies = async (page) => {
   try {
     const response = await apiService.get(`${popularMovies}`,
       {
         params: {
           api_key: `${APIkey}`,
           language: `${APIlanguage}`,
+          page: `${page}`,
         },
       });
     return response.data;
