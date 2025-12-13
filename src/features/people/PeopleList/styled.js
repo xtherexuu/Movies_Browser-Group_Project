@@ -23,14 +23,13 @@ export const Header = styled.h1`
 export const PeopleContainer = styled.section`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(198px, 1fr));
-  gap: 24px;
+  grid-gap: 24px;
   margin: 16px;
 
    @media (max-width: ${({ theme }) => theme.breakPoint.small}) {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    grid-column-gap: 16px;
-    grid-row-gap: 16px;
+    grid-gap: 16px;
   }
 `;
