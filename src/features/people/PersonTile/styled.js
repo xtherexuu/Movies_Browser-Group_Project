@@ -4,6 +4,12 @@ import { Link } from "react-router";
 export const TileLink = styled(Link)`
   text-decoration: none;
   cursor: pointer;
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.03, 1.03);
+    transition: 1s ease-out 0s;
+  }
 `;
 
 export const Tile = styled.article`
