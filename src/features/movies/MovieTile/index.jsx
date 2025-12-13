@@ -1,4 +1,18 @@
-import { TileLink, Tile, Title, Poster, Year, Tags, Tag, Rating, StarIcon, Rate, Votes, Details } from './styled';
+import { 
+  TileLink, 
+  Tile, 
+  Title, 
+  Poster, 
+  Year, 
+  Tags, 
+  Tag, 
+  Rating, 
+  StarIcon, 
+  Rate, 
+  Votes, 
+  Details, 
+  DetailsBlock 
+} from './styled';
 import noMovieImage from "../../../images/noMovieImage.svg";
 import starIcon from "../../../images/starIcon.svg";
 import { Genres } from "../genres";
@@ -24,13 +38,15 @@ export const MovieTile = ({
           alt=""
         />
         <Details>
-          <Title>{title}</Title>
-          <Year>{date ? date.toString().slice(0, 4) : null}</Year>
-          <Tags>
-            {movieGenres.map((genre) => (
-              <Tag key={genre.id}>{genre.name}</Tag>
-            ))}
-          </Tags>
+          <DetailsBlock>
+            <Title>{title}</Title>
+            <Year>{date ? date.toString().slice(0, 4) : null}</Year>
+            <Tags>
+              {movieGenres.map((genre) => (
+                <Tag key={genre.id}>{genre.name}</Tag>
+              ))}
+            </Tags>
+          </DetailsBlock>
           <Rating>
             <StarIcon src={starIcon} />
             <Rate>{rate ? rate.toString().replace('.', ',') : null}</Rate>

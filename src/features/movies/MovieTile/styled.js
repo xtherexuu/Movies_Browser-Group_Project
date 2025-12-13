@@ -50,6 +50,12 @@ export const Details = styled.div`
   }
 `;
 
+export const DetailsBlock = styled.div`
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 8px;
+`;
+
 export const Title = styled.h2`
   line-height: 1.3;
   font-weight: ${({ theme }) => theme.fontWeight.regular};
