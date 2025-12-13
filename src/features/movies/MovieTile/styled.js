@@ -19,6 +19,11 @@ export const Tile = styled.article`
   &:hover {
     box-shadow: 0px 4px 12px 0px ${({ theme }) => theme.color.darkGray};
   }
+
+  @media (max-width: ${({ theme }) => theme.breakPoint.small}) {
+    grid-template-columns: auto 1fr;
+    grid-gap: 16px;
+  }
 `;
 
 export const Poster = styled.img`
@@ -26,6 +31,23 @@ export const Poster = styled.img`
   width: 100%;
   border-radius: 5px;
   background-color: ${({ theme }) => theme.color.silver};
+
+  @media (max-width: ${({ theme }) => theme.breakPoint.small}) {
+    width: 114px;
+    height: auto;
+    margin-bottom: 0;
+  }
+`;
+
+export const Details = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @media (max-width: ${({ theme }) => theme.breakPoint.small}) {
+    justify-content: flex-start;
+    gap: 8px;
+  }
 `;
 
 export const Title = styled.h2`
@@ -34,6 +56,11 @@ export const Title = styled.h2`
   color: ${({ theme }) => theme.color.black};
   font-size: 22px;
   margin-top: 16px;
+
+  @media (max-width: ${({ theme }) => theme.breakPoint.small}) {
+    margin-top: 0;
+    font-size: 16px;
+  }
 `;
 
 export const Year = styled.p`
@@ -42,23 +69,33 @@ export const Year = styled.p`
   font-weight: 400;
   color: ${({ theme }) => theme.color.silver};
   margin: 8px 0;
+
+  @media (max-width: ${({ theme }) => theme.breakPoint.small}) {
+    font-size: 14px;
+    margin: 0;
+  }
 `
 export const Tags = styled.ul`
   list-style: none;
   padding-left: 0px;
-  margin: 0px -8px;
   display: flex;
   flex-wrap: wrap;
+  gap: 8px;
 `;
 
 export const Tag = styled.li`
   color: ${({ theme }) => theme.color.black};
-  margin: 8px;
   padding: 8px 16px;
   font-size: 14px;
   border-radius: 5px;
   font-weight: ${({ theme }) => theme.fontWeight.regular};
   background: ${({ theme }) => theme.color.mystic};
+
+  @media (max-width: ${({ theme }) => theme.breakPoint.small}) {
+    font-size: 10px;
+    line-height: 11px;
+    padding: 4px 8px;
+  }
 `;
 
 export const Rating = styled.div`
@@ -68,10 +105,19 @@ export const Rating = styled.div`
   padding: 16px 0 0 0;
   max-width: 250px;
   line-height: 24px;
+
+  @media (max-width: ${({ theme }) => theme.breakPoint.small}) {
+    padding: 4px 0 0 0;
+    gap: 7px;
+  }
 `;
 
 export const StarIcon = styled.img`
   width: 22px;
+
+  @media (max-width: ${({ theme }) => theme.breakPoint.small}) {
+    width: 16px;
+  }
 `;
 
 export const Rate = styled.span`
@@ -79,6 +125,10 @@ export const Rate = styled.span`
   line-height: 1.5;
   font-weight: ${({ theme }) => theme.fontWeight.semiBold};
   color: ${({ theme }) => theme.color.black};
+
+  @media (max-width: ${({ theme }) => theme.breakPoint.small}) {
+    font-size: 13px;
+  }
 `;
 
 export const Votes = styled.span`
@@ -86,4 +136,8 @@ export const Votes = styled.span`
   line-height: 1.5;
   font-weight: ${({ theme }) => theme.fontWeight.regular};
   color: ${({ theme }) => theme.color.waterloo};
+
+  @media (max-width: ${({ theme }) => theme.breakPoint.small}) {
+    font-size: 13px;
+  }
 `;
