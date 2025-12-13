@@ -5,12 +5,6 @@ export const Wrapper = styled.main`
   width: 100%;
   max-width: 1368px;
   margin: auto;
-
-  @media (max-width: ${({ theme }) => theme.breakPoint.small}) {
-    max-width: 320px;
-    width: 100%;
-    padding: 0 16px;
-  }
 `;
 
 export const Header = styled.h1`
