@@ -32,7 +32,7 @@ export const SearchMovie = () => {
             />
           ))}
         </MoviesContainer>
-        <Paginator pageAmount={total_pages} />
+        <Paginator pagesAmount={total_pages} />
       </Wrapper>
     );
 };
