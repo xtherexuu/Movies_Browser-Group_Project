@@ -16,12 +16,8 @@ import { Paginator } from "../../../common/Paginator";
 import { LoadingPage } from "../../../common/LoadingPage";
 import { ErrorPage } from "../../../common/ErrorPage";
 import { SearchMovie } from "../MovieSearch";
+import { useQueryParameters } from "../../queryParameters";
 
-export const useQueryParameters = (key) => {
-  const location = useLocation();
-  const searchParams = new URLSearchParams(location.search);
-  return searchParams.get(key);
-};
 
 export const MovieListPage = () => {
   const status = useSelector(selectMoviesStatus);
