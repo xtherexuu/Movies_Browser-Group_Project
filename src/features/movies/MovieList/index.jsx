@@ -6,11 +6,16 @@ import {
   selectMovies,
   selectMoviesStatus,
 } from "../moviesListSlice";
+import {
+  fetchSearchMovie,
+  selectSearchMovieStatus,
+} from "../movieSearchSlice";
 import { Header, MoviesContainer, Wrapper } from "./styled";
 import { MovieTile } from "../MovieTile";
 import { Paginator } from "../../../common/Paginator";
 import { LoadingPage } from "../../../common/LoadingPage";
 import { ErrorPage } from "../../../common/ErrorPage";
+import { SearchMovie } from "../MovieSearch";
 
 export const useQueryParameters = (key) => {
   const location = useLocation();
@@ -22,11 +27,14 @@ export const MovieListPage = () => {
   const status = useSelector(selectMoviesStatus);
   const data = useSelector(selectMovies);
   const dispatch = useDispatch();
+  const statusSearchMovie = useSelector(selectSearchMovieStatus);
+  const location = useLocation();
 
   // API page limit 500
   const APIpagesLimit = 500;
   const pageTitle = "Popular movies";
   const page = useQueryParameters("page");
+  const searchQuery = useQueryParameters("search");
 
   const setPage = (page) => {
     if (page === null) return 1;
@@ -34,18 +42,22 @@ export const MovieListPage = () => {
   };
 
   useEffect(() => {
-    dispatch(fetchMovies(setPage(page)));
+    if (location.pathname.includes("/") && location.search.includes("search")) {
+      dispatch(fetchSearchMovie({ query: searchQuery, page: setPage(page) }));
+    }
+    else
+      dispatch(fetchMovies(setPage(page)));
   }, []);
 
-  if (status === "loading") {
-    return (<LoadingPage title={pageTitle} />)
-  }
+  if (status === "loading") return <LoadingPage title={pageTitle} />;
+  if (statusSearchMovie === "loading") return <LoadingPage title={"Search movie"} />
+  if (status === "error") return <ErrorPage />;
+  if (statusSearchMovie === "error") return <Error />;
 
-  if (status === "error") {
-    return (<ErrorPage />)
-  }
+  if (searchQuery !== null && statusSearchMovie === "success")
+    return <SearchMovie />;
 
-  if (status === "success") {
+  if (status === "success" && searchQuery === null) {
     const pagesAmount = data.total_pages;
     const setPagesAmountMax = () => {
       if (pagesAmount < APIpagesLimit)
