@@ -13,7 +13,7 @@ import {
 import { PersonPage } from "../PersonPage";
 import { LoadingPage } from "../../../common/LoadingPage";
 import { ErrorPage } from "../../../common/ErrorPage";
-import { MovieList } from "../../movies/MovieList";
+import { MovieListPage } from "../../movies/MovieList";
 import { StyledMain } from "./styled";
 
 
@@ -49,12 +49,12 @@ export const PeopleDetails = () => {
                         birthPlace={personDetails.place_of_birth}
                         biography={personDetails.biography}
                     />
-                    <MovieList
+                    <MovieListPage
                         header={`Movies - cast`}
                         MovieList={movieCast}
                         genereList={genereList}
                     />
-                    <MovieList
+                    <MovieListPage
                         header={`Movies - crew`}
                         MovieList={movieCrew}
                         genereList={genereList}
