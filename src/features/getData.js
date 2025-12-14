@@ -5,6 +5,7 @@ const APIkey = "f4abb2c51d8a72a2554557a4a8c06397";
 const APIlanguage = "en_US";
 const popularMovies = "/movie/popular";
 const popularPeople = "/person/popular";
+const searchMovie ="/search/movie";
 
 const apiService = axios.create({ baseURL: `${APIbaseURL}` });
 
@@ -39,6 +40,25 @@ export const getPopularPeople = async () => {
   }
   catch (error) {
     console.error("Error fetching movies", error);
+    return [];
+  }
+};
+
+export const getSearchMovie = async (query, page) => {
+  try {
+    const response = await apiService.get(`${searchMovie}`,
+      {
+        params: {
+          api_key: `${APIkey}`,
+          language: `${APIlanguage}`,
+          query: `${query}`,
+          page: `${page}`,
+        },
+      });
+    return response.data;
+  }
+  catch (error) {
+    console.error("Error searching movie", error);
     return [];
   }
 };
