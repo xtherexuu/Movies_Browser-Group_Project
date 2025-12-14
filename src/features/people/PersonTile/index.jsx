@@ -3,7 +3,7 @@ import noPersonImage from "../../../images/noPersonImage.svg"
 
 export const PersonTile = () => {
   return (
-    <TileLink>
+    <TileLink to="/person">
       <Tile>
         <Picture src={noPersonImage} />
         <Name>Full Name</Name>
