@@ -5,7 +5,7 @@ const APIkey = "f4abb2c51d8a72a2554557a4a8c06397";
 const APIlanguage = "en_US";
 const popularMovies = "/movie/popular";
 const popularPeople = "/person/popular";
-
+const searchPerson ="/search/person";
 
 export const imagesAPIw400 = "https://image.tmdb.org/t/p/w400/";
 export const imagesAPIw200 = "https://image.tmdb.org/t/p/w200/";
@@ -46,3 +46,22 @@ export const getPopularPeople = async (page) => {
     return [];
   }
 };
+
+export const getSearchPerson = async (query, page) => {
+  try {
+    const response = await apiService.get(`${searchPerson}`,
+      {
+        params: {
+          api_key: `${APIkey}`,
+          language: `${APIlanguage}`,
+          query: `${query}`,
+          page: `${page}`,
+        },
+      });
+    return response.data;
+  }
+  catch (error) {
+    console.error("Error searching person.", error);
+    return [];
+  }
+}; 
