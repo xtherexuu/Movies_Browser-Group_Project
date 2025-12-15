@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import { useLocation } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
 import {
   fetchPeople,
@@ -11,12 +10,8 @@ import { Wrapper, Header, PeopleContainer } from "./styled"
 import { Paginator } from "../../../common/Paginator";
 import { LoadingPage } from "../../../common/LoadingPage";
 import { ErrorPage } from "../../../common/ErrorPage";
+import { useQueryParameters } from "../../queryParameters";
 
-export const useQueryParameters = (key) => {
-  const location = useLocation();
-  const searchParams = new URLSearchParams(location.search);
-  return searchParams.get(key);
-};
 
 export const PeopleListPage = () => {
   const status = useSelector(selectPeopleStatus);
