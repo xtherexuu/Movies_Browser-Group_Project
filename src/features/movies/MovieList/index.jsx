@@ -43,7 +43,7 @@ export const MovieListPage = () => {
     }
     else
       dispatch(fetchMovies(setPage(page)));
-  }, []);
+  }, [searchQuery, page]);
 
   if (status === "loading") return <LoadingPage title={pageTitle} />;
   if (statusSearchMovie === "loading") return <LoadingPage title={"Search movie"} />
