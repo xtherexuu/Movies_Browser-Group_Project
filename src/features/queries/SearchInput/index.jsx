@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import {
   SearchButton,
   StyledInput,
@@ -6,35 +5,16 @@ import {
   StyledLoupeIcon,
 } from "./styled";
 import { useDispatch, useSelector } from "react-redux";
-import { selectSearch, setSearchInputValue } from "../queriesSlice";
-import { useLocation, useSearchParams } from "react-router";
-import getNewSearchParams from "../../../getNewSearchParams";
+import {
+  selectSearchInputValue,
+  setSearchInputValue,
+} from "./searchInputSlice";
+import { useLocation } from "react-router";
 
 const SearchInput = () => {
   const dispatch = useDispatch();
-  const search = useSelector(selectSearch);
-  const [inputValue, setInputValue] = useState(search);
-  const [searchParams, setSearchParams] = useSearchParams();
-  const location = useLocation();
-
-  useEffect(() => {
-    const searchQuery = searchParams.get("s");
-    if (searchQuery) {
-      setInputValue(searchQuery);
-    }
-  }, [searchParams]);
-
-  useEffect(() => {
-    dispatch(setSearchInputValue(inputValue));
-  }, [inputValue]);
-
-  useEffect(() => {
-    if (search === "" && searchParams.get("s")) {
-      setSearchParams(getNewSearchParams(searchParams, ["s", null]));
-    } else if (search !== "") {
-      setSearchParams(getNewSearchParams(searchParams, ["s", search]));
-    }
-  }, [search]);
+  const inputValue = useSelector(selectSearchInputValue) || "";
+  const { pathname } = useLocation();
 
   return (
     <StyledInputWrapper>
@@ -43,11 +23,11 @@ const SearchInput = () => {
       </SearchButton>
       <StyledInput
         value={inputValue}
-        onChange={({ target }) => {
-          setInputValue(target.value);
+        onChange={(event) => {
+          dispatch(setSearchInputValue(event.target.value));
         }}
         placeholder={`Search for ${
-          location.pathname.startsWith("/people") ? "People" : "Movies"
+          pathname.startsWith("/people") ? "People" : "Movies"
         }...`}
       />
     </StyledInputWrapper>
