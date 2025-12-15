@@ -64,7 +64,7 @@ export const MoviePage = () => {
                   id={actor.id}
                   key={`${actor.id}${actor.character}`}
                   name={actor.name}
-                  profile_path={actor.profile_path}
+                  profile={actor.profile_path}
                   role={actor.character}
                 />
               ))}
@@ -77,7 +77,7 @@ export const MoviePage = () => {
                 <PersonTile
                   key={`${person.id}${person.job}`}
                   name={person.name}
-                  profile_path={person.profile_path}
+                  profile={person.profile_path}
                   role={person.job}
                   id={person.id}
                 />
