@@ -68,13 +68,14 @@ export const Tag = styled.li`
 export const Rating = styled.div`
   display: flex;
   flex-direction: row;
+  align-items: baseline;
   margin-top: 24px;
 `;
 
 export const RateContainer = styled.div`
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: baseline;
   height: 40px;
   margin-bottom: 16px;
 `;
@@ -101,6 +102,7 @@ export const Votes = styled.p`
   line-height: 120%;
   font-size: 16px;
   font-weight: ${({ theme }) => theme.fontWeight.regular};
+  padding-left: 12px;
 `;
 export const StarIcon = styled.img`
   width: 22px;

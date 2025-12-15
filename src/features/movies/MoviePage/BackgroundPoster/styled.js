@@ -86,7 +86,7 @@ export const Rating = styled.div`
 export const RateContainer = styled.div`
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: baseline;
   height: 40px;
   margin-bottom: 16px;
 `;
