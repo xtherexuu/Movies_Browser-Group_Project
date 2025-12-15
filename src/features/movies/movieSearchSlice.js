@@ -24,9 +24,6 @@ const searchMovieSlice = createSlice({
       status: "error",
       searchData: null,
     }),
-    fetchOpen: (state, { payload: open }) => {
-      state.open = open;
-    },
   },
 });
 
