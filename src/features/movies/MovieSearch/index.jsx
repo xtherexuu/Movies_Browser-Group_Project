@@ -15,9 +15,9 @@ export const SearchMovie = () => {
   else
     return (
       <Wrapper>
-        <Header
-          title={`Search results for "${searchParams}" (${total_results})`}
-        />
+        <Header>
+          {`Search results for "${searchParams}" (${total_results})`}
+        </Header>
         <MoviesContainer>
           {results.map((movie) => (
             <MovieTile
