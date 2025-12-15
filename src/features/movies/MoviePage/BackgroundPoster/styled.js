@@ -9,7 +9,6 @@ export const Wrapper = styled.section`
   justify-content: center;
   max-width: 100%;
   position: relative;
-  height: 770px;
 `;
 
 export const PosterSpace = styled.div`
@@ -18,8 +17,6 @@ export const PosterSpace = styled.div`
   flex-direction: column;
   align-items: center;
   margin: auto;
-  //height: 770px;
-  max-width: 1368px;
   position: relative;
   background: 
     linear-gradient(
@@ -60,8 +57,9 @@ export const PosterSpace = styled.div`
 `;
 
 export const PosterBig = styled.img`
-  max-width: 100%;
-  height: auto;
+  //max-width: 100%;
+  //height: 770px;
+  width: 75%;
   z-index: -1;
 `;
 
