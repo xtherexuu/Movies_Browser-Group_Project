@@ -32,11 +32,8 @@ export const PeopleListPage = () => {
   const location = useLocation();
 
   const setPage = (page) => {
-    if (page === null) {
-      return 1
-    } else {
-      return page
-    }
+    if (page === null) return 1;
+    else return page;
   };
 
   console.log(location);
