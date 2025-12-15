@@ -18,6 +18,6 @@ function* fetchSearchMovieHandler(action) {
   }
 };
 
-export function* searchSaga() {
+export function* searchMovieSaga() {
   yield takeLatest(fetchSearchMovie, fetchSearchMovieHandler);
 }
