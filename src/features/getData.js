@@ -8,6 +8,8 @@ const popularPeople = "/person/popular";
 const movieById = "/movie/"
 
 export const imagesFullApi = "https://image.tmdb.org/t/p";
+export const imagesAPIw400 = "https://image.tmdb.org/t/p/w400/";
+export const imagesAPIw200 = "https://image.tmdb.org/t/p/w200/";
 
 const apiService = axios.create({ baseURL: `${APIbaseURL}` });
 
