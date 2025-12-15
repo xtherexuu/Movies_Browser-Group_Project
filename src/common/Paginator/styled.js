@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
-import ArrowLeft from "../../../images/arrowLeft.svg?react";
-import ArrowRight from "../../../images/arrowRight.svg?react";
+import ArrowLeft from "../../images/arrowLeft.svg?react";
+import ArrowRight from "../../images/arrowRight.svg?react";
 
 export const StyledPaginator = styled.div`
   display: flex;
