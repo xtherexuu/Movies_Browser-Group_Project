@@ -25,12 +25,28 @@ export const Content = styled.div`
 export const Title = styled.header`
     font-weight: 600;
     font-size: 36px;
-    margin-bottom: 24px;
 `;
 
 export const Year = styled.div`
     font-weight: 400;
     font-size: 22px;
+    margin: 24px 0 24px;
+`;
+
+export const Production = styled.p`
+  font-size: 18px;
+  font-weight:${({ theme }) => theme.fontWeight.regular};
+  margin-bottom: 8px;
+`;
+
+export const Label = styled.span`
+  color: ${({ theme }) => theme.color.waterloo};
+  padding-right: 10px;
+`;
+
+export const Release = styled.p`
+  font-size: 18px;
+  font-weight:${({ theme }) => theme.fontWeight.regular};
 `;
 
 export const Tags = styled.ul`
@@ -47,6 +63,47 @@ export const Tag = styled.li`
     font-size: 14px;
     border-radius: 5px;
     background: ${({ theme }) => theme.color.mystic};
+`;
+
+export const Rating = styled.div`
+  display: flex;
+  flex-direction: row;
+  margin-top: 24px;
+`;
+
+export const RateContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 40px;
+  margin-bottom: 16px;
+`;
+
+//export const StyledStarIcon = styled(StarIcon)`
+//  padding-top: -5px;
+//  padding-right: 8px;
+//  height: 40px;
+//  width: 40px;
+//`;
+
+export const Rate = styled.p`
+  line-height: 130%;
+  font-size: 30px;
+  font-weight: ${({ theme }) => theme.fontWeight.medium};
+`;
+
+export const RateMax = styled.p`
+  font-size: 16px;
+  padding-left: 7px;
+`;
+
+export const Votes = styled.p`
+  line-height: 120%;
+  font-size: 16px;
+  font-weight: ${({ theme }) => theme.fontWeight.regular};
+`;
+export const StarIcon = styled.img`
+  width: 22px;
 `;
 
 export const Description = styled.p`
