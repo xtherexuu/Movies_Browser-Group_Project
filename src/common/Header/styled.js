@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import PlaceholderMovieIcon from "../../images/placeholderMovieIcon.svg?react";
-import { NavLink } from "react-router";
+import { Link, NavLink } from "react-router";
 
 export const StyledHeader = styled.header`
   width: 100vw;
@@ -28,6 +28,13 @@ export const HeaderContent = styled.div`
 export const NavContainer = styled.nav`
   display: flex;
   align-items: center;
+`;
+
+export const HeadingLinkContainer = styled(Link)`
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: ${({ theme }) => theme.color.white};
 `;
 
 export const Heading = styled.h1`
