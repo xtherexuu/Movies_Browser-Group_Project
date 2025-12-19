@@ -1,7 +1,7 @@
-import { MovieListPage } from "./features/movies/MovieList";
+import PageLayout from "./common/PageLayout";
 
 const App = () => {
-  return <MovieListPage />;
+  return <PageLayout />;
 };
 
 export default App;
