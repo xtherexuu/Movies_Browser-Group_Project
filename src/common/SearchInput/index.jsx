@@ -33,7 +33,6 @@ const SearchInput = () => {
           );
         } else {
           setSearchParams(newSearchParams);
-          console.log(newSearchParams.toString());
         }
       }, 700);
 
