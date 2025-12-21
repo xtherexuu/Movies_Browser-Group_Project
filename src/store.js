@@ -1,6 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 import createSagaMiddleware from "redux-saga";
-import movieListReducer from "./features/movies/MovieList/movieListSlice";
+import movieListReducer from "./features/movies/moviesListSlice";
+import searchMovieReducer from "./features/movies/movieSearchSlice";
 import rootSaga from "./rootSaga"
 
 const sagaMiddleware = createSagaMiddleware();
@@ -8,6 +9,7 @@ const sagaMiddleware = createSagaMiddleware();
 const store = configureStore({
     reducer: {
         movieList: movieListReducer,
+        searchMovie: searchMovieReducer,
     },
      middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware().concat(sagaMiddleware),
