@@ -20,7 +20,7 @@ export const Tile = styled.article`
   &:hover {
     cursor: pointer;
     transform: scale(1.03, 1.03);
-    transition: 1s ease-out 0s;
+    transition: 0.5s ease-out 0s;
   }
 
   @media (max-width: ${({ theme }) => theme.breakPoint.small}) {
