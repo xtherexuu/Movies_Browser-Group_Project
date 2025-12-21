@@ -36,8 +36,6 @@ export const PeopleListPage = () => {
     else return page;
   };
 
-  console.log(location);
-
   useEffect(() => {
     if (location.pathname.includes("/people") && location.search.includes("search")) {
       dispatch(fetchSearchPerson({ query: searchQuery, page: setPage(page) }));
