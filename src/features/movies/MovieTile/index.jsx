@@ -31,7 +31,7 @@ export const MovieTile = ({
   const movieGenres = Genres.filter((genre) => genres.includes(genre.id));
 
   return (
-    <TileLink to={`/movies/${id}`} key={id}>
+    <TileLink to={`/movie/${id}`} key={id}>
       <Tile>
         <Poster
           src={poster ? `${APIimage}${poster}` : noMovieImage}
