@@ -4,6 +4,7 @@ import { NavLink } from "react-router";
 
 export const StyledHeader = styled.header`
   width: 100vw;
+  max-width: 100%;
   display: flex;
   justify-content: center;
   background-color: ${({ theme }) => theme.color.black};
