@@ -8,7 +8,7 @@ export const PersonTile = ({
   profile,
 }) => {
   return (
-    <TileLink to={`/person/${id}`} key={id}>
+    <TileLink to={`/people/${id}`} key={id}>
       <Tile>
         <Picture 
           src={profile ? `${imagesAPIw200}${profile}` : noPersonImage}
