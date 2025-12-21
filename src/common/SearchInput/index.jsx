@@ -43,8 +43,8 @@ const SearchInput = () => {
   }, [inputValue, setInputValue]);
 
   useEffect(() => {
-    const searchQuery = searchParams.get("search");
-    if (searchQuery && !inputValue) {
+    const searchQuery = searchParams.get("search") ?? "";
+    if (searchQuery !== inputValue) {
       setInputValue(searchQuery);
     }
   }, [searchParams, setSearchParams]);
