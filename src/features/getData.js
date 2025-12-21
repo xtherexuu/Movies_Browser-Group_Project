@@ -52,6 +52,22 @@ export const getPopularPeople = async (page) => {
 export const getSearchPerson = async (query, page) => {
   try {
     const response = await apiService.get(`${searchPerson}`,
+      {
+        params: {
+          api_key: `${APIkey}`,
+          language: `${APIlanguage}`,
+          query: `${query}`,
+          page: `${page}`,
+        },
+      });
+    return response.data;
+  }
+  catch (error) {
+    console.error("Error searching person.", error);
+    return [];
+  }
+}; 
+
 export const getSearchMovie = async (query, page) => {
   try {
     const response = await apiService.get(`${searchMovie}`,
@@ -66,7 +82,7 @@ export const getSearchMovie = async (query, page) => {
     return response.data;
   }
   catch (error) {
-    console.error("Error searching person.", error);
+    console.error("Error searching movie.", error);
     return [];
   }
 };
