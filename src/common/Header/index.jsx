@@ -1,4 +1,4 @@
-import SearchInput from "../../features/SearchInput";
+import SearchInput from "../SearchInput";
 import {
   HeaderContent,
   Heading,
