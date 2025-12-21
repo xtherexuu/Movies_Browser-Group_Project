@@ -10,12 +10,16 @@ export const Tile = styled.article`
     box-shadow: 0px 4px 12px 0px #BAC7D580;
     display: grid;
     grid-template-columns: auto 1fr;
-    grid-gap: 40px;
+    grid-gap: 40px;  
 `;
 
 export const Image = styled.img`
     width: 312px;
-    height: 464px;
+    //height: 464px;
+
+    @media (max-width: ${({ theme }) => theme.breakPoint.semiMedium}) {
+      max-width: 114px;
+  }
 `;
 
 export const Content = styled.div`
@@ -25,6 +29,18 @@ export const Content = styled.div`
 export const Title = styled.header`
     font-weight: 600;
     font-size: 36px;
+
+  @media (max-width: ${({ theme }) => theme.breakPoint.medium}) {
+    font-size: 45px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakPoint.semiMedium}) {
+    font-size: 30px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakPoint.small}) {
+    font-size: 24px;
+  }
 `;
 
 export const Year = styled.div`
@@ -42,6 +58,10 @@ export const Production = styled.p`
 export const Label = styled.span`
   color: ${({ theme }) => theme.color.waterloo};
   padding-right: 10px;
+
+  @media (max-width: ${({ theme }) => theme.breakPoint.small}) {
+    display: none;
+  } 
 `;
 
 export const Release = styled.p`
@@ -91,6 +111,18 @@ export const Rate = styled.p`
   line-height: 130%;
   font-size: 30px;
   font-weight: ${({ theme }) => theme.fontWeight.medium};
+
+  @media (max-width: ${({ theme }) => theme.breakPoint.medium}) {
+    font-size: 20px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakPoint.semiMedium}) {
+    font-size: 16px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakPoint.small}) {
+    font-size: 14px;
+  }
 `;
 
 export const RateMax = styled.p`

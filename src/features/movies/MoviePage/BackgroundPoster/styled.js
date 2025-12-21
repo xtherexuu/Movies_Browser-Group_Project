@@ -75,12 +75,37 @@ export const Title = styled.h1`
   font-size: 64px;
   font-weight: ${({ theme }) => theme.fontWeight.semiBold};
   margin: 0px;
+
+  @media (max-width: ${({ theme }) => theme.breakPoint.medium}) {
+    font-size: 40px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakPoint.semiMedium}) {
+    font-size: 38px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakPoint.small}) {
+    font-size: 24px;
+  }
 `;
 
 export const Rating = styled.div`
   display: flex;
   flex-direction: column;
   margin-top: 24px;
+
+  @media (max-width: ${({ theme }) => theme.breakPoint.medium}) {
+    flex-direction: row;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakPoint.semiMedium}) {
+    flex-direction: row;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakPoint.small}) {
+    flex-direction: row;
+  }
+
 `;
 
 export const RateContainer = styled.div`
@@ -94,19 +119,57 @@ export const RateContainer = styled.div`
 export const StyledStarIcon = styled(StarIcon)`
   padding-top: -5px;
   padding-right: 8px;
-  height: 40px;
+  height: 30px;
   width: 40px;
+
+  //@media (max-width: ${({ theme }) => theme.breakPoint.medium}) {
+  //  font-size: 48px;
+  //}
+
+  @media (max-width: ${({ theme }) => theme.breakPoint.semiMedium}) {
+    height: 20px;
+    width: 24px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakPoint.small}) {
+    height: 16px;
+    width: 16px;
+  }
 `;
 
 export const Rate = styled.p`
   line-height: 130%;
   font-size: 30px;
   font-weight: ${({ theme }) => theme.fontWeight.medium};
+
+  @media (max-width: ${({ theme }) => theme.breakPoint.medium}) {
+    font-size: 48px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakPoint.semiMedium}) {
+    font-size: 38px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakPoint.small}) {
+    font-size: 24px;
+  }
 `;
 
 export const RateMax = styled.p`
   font-size: 16px;
   padding-left: 7px;
+
+  @media (max-width: ${({ theme }) => theme.breakPoint.medium}) {
+    font-size: 48px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakPoint.semiMedium}) {
+    font-size: 38px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakPoint.small}) {
+    font-size: 24px;
+  }
 `;
 
 export const Votes = styled.p`
