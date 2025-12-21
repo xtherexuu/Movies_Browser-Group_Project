@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import { useLocation } from "react-router";
+import { useLocation, useParams } from "react-router";
 
 import {
   fetchMovieById,
@@ -21,7 +21,7 @@ export const useQueryParameters = (key) => {
 
 export const MoviePage = () => {
   const dispatch = useDispatch();
-  const id = useQueryParameters("id");
+  const {id} = useParams();
   const movieData = useSelector(selectMovieInfo);
   const status = useSelector(selectMovieStatus);
 
