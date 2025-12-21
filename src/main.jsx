@@ -10,6 +10,7 @@ import { Normalize } from "styled-normalize";
 import App from "./App.jsx";
 import PageLayout from "./common/PageLayout/index.jsx";
 import { PeopleListPage } from "./features/people/PeopleList/index.jsx";
+import { MovieListPage } from "./features/movies/MovieList/index.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -19,8 +20,9 @@ createRoot(document.getElementById("root")).render(
         <Normalize />
         <HashRouter>
           <Routes>
-            <Route element={<PageLayout />}>
-              <Route path="/" element={<App />} />
+            <Route element={<App />}>
+              <Route path="/" element={<MovieListPage />} />
+              <Route path="/movies" element={<MovieListPage />} />
               <Route path="/people" element={<PeopleListPage />} />
             </Route>
           </Routes>

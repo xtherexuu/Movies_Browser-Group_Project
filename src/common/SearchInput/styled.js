@@ -4,6 +4,8 @@ import { Link } from "react-router";
 
 export const StyledInputWrapper = styled.div`
   display: flex;
+  flex-grow: 1;
+  max-width: 432px;
   align-items: center;
   gap: 16px;
   flex-shrink: 1;
@@ -15,13 +17,13 @@ export const StyledInputWrapper = styled.div`
   }
   @media (max-width: ${({ theme }) => theme.breakPoint.medium}) {
     gap: 8px;
+    max-width: 100%;
   }
 `;
 
 export const StyledInput = styled.input`
   font-size: 16px;
   flex-shrink: 1;
-  min-width: 215px;
   width: 100%;
   height: 100%;
   border: none;
