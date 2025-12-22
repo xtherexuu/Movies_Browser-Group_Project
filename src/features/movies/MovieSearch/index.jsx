@@ -4,6 +4,7 @@ import { selectMovie } from "../movieSearchSlice";
 import { MovieTile } from "../MovieTile";
 import { useQueryParameters } from "../../queryParameters";
 import { Wrapper, Header, MoviesContainer } from "../MovieList/styled";
+import { NoResultsPage } from "../../../common/NoResultsPage";
 
 export const SearchMovie = () => {
   const searchParams = useQueryParameters("search");
@@ -11,7 +12,7 @@ export const SearchMovie = () => {
   const { results, total_pages, total_results } =
     useSelector(selectMovie);
 
-  if (total_results === 0) return <div>No Results Page</div>;
+  if (total_results === 0) return <NoResultsPage title={searchParams} />;
   else
     return (
       <Wrapper>

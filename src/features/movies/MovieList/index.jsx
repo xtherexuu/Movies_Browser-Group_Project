@@ -48,7 +48,7 @@ export const MovieListPage = () => {
   if (status === "loading") return <LoadingPage title={pageTitle} />;
   if (statusSearchMovie === "loading") return <LoadingPage title={"Search movie"} />
   if (status === "error") return <ErrorPage />;
-  if (statusSearchMovie === "error") return <Error />;
+  if (statusSearchMovie === "error") return <ErrorPage />;
 
   if (searchQuery !== null && statusSearchMovie === "success")
     return <SearchMovie />;
