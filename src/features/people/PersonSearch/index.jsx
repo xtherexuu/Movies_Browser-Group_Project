@@ -4,6 +4,7 @@ import { selectPerson } from "../personSearchSlice";
 import { PersonTile } from "../PersonTile";
 import { useQueryParameters } from "../../queryParameters";
 import { Wrapper, Header, PeopleContainer } from "../PeopleList/styled";
+import { NoResultsPage } from "../../../common/NoResultsPage";
 
 export const SearchPerson = () => {
   const searchParams = useQueryParameters("search");
@@ -11,7 +12,7 @@ export const SearchPerson = () => {
   const { results, total_pages, total_results } =
     useSelector(selectPerson);
 
-  if (total_results === 0) return <div>No Results Page</div>;
+  if (total_results === 0) return <NoResultsPage title={searchParams} />;
   else
     return (
       <Wrapper>

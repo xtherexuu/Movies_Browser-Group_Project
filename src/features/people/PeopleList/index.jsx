@@ -48,7 +48,7 @@ export const PeopleListPage = () => {
   if (status === "loading") return <LoadingPage title={pageTitle} />;
   if (statusSearchPerson === "loading") return <LoadingPage title={"Search person"} />
   if (status === "error") return <ErrorPage />;
-  if (statusSearchPerson === "error") return <Error />;
+  if (statusSearchPerson === "error") return <ErrorPage />;
   if (searchQuery !== null && statusSearchPerson === "success")
     return <SearchPerson />;
 
