@@ -26,6 +26,7 @@ export const PaginatorSite = styled(PaginatorText)`
 `;
 
 export const PaginatorButton = styled.button`
+  cursor: pointer;
   display: flex;
   align-items: center;
   gap: 8px;
