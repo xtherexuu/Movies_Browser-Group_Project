@@ -29,6 +29,9 @@ export const HeaderContent = styled.div`
 export const NavContainer = styled.nav`
   display: flex;
   align-items: center;
+  @media (max-width: ${({ theme }) => theme.breakPoint.medium}) {
+    justify-content: space-between;
+  }
 `;
 
 export const HeadingLinkContainer = styled(Link)`
