@@ -51,5 +51,23 @@ export const Name = styled.h2`
     font-size: 18px;
     margin-top: 8px;
   }
+`;
 
+export const FunctionName = styled.p`
+  font-size: 18px;
+  font-weight: ${({ theme }) => theme.fontWeight.regular};
+  line-height: 27px;
+  text-align: center;
+  margin-top: 8px;
+  color: ${({ theme }) => theme.color.waterloo};
+
+  @media (max-width: ${({ theme }) => theme.breakPoint.medium}) {
+    font-size: 15px;
+    line-height: 22px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakPoint.small}) {
+    font-size: 14px;
+    line-height: 18px;
+  }
 `;
