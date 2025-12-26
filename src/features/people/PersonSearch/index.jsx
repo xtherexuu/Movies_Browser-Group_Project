@@ -16,9 +16,9 @@ export const SearchPerson = () => {
   else
     return (
       <Wrapper>
-        <Header
-          title={`Search results for "${searchParams}" (${total_results})`}
-        />
+        <Header>
+          {`Search results for "${searchParams}" (${total_results})`}
+        </Header>
         <PeopleContainer>
           {results.map((person) => (
             <PersonTile
