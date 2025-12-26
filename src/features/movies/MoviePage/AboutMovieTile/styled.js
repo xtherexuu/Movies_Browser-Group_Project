@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-    margin: 64px 0px;
+    margin: 64px auto 0;
 `;
 
 export const Tile = styled.article`
@@ -16,10 +16,21 @@ export const Tile = styled.article`
 export const Image = styled.img`
     width: 312px;
     //height: 464px;
+    grid-area: 1 / 1 / 3 / 2;
 
-    @media (max-width: ${({ theme }) => theme.breakPoint.semiMedium}) {
-      max-width: 114px;
-  }
+    @media (max-width: ${({ theme }) => theme.breakPoint.medium}) {
+      width: 100%;
+      max-width: 312px;
+      min-width: 114px;
+      display: grid;
+      grid-template-columns: auto 1fr;
+    }
+
+    @media (max-width: ${({ theme }) => theme.breakPoint.small}) {
+      min-width: 114px;
+      display: grid;
+      grid-template-columns: auto 1fr;
+    }
 `;
 
 export const Content = styled.div`
@@ -83,6 +94,12 @@ export const Tag = styled.li`
     font-size: 14px;
     border-radius: 5px;
     background: ${({ theme }) => theme.color.mystic};
+
+    @media (max-width: ${({ theme }) => theme.breakPoint.small}) {
+      font-size: 10px;
+      line-height: 11px;
+      padding: 4px 8px;
+    }
 `;
 
 export const Rating = styled.div`
@@ -141,6 +158,18 @@ export const StarIcon = styled.img`
 `;
 
 export const Description = styled.p`
+    grid-area: 2 / 2 / 3 / 4;
     font-size: 20px;
     line-height: 1.6;
+
+    @media (max-width: ${({ theme }) => theme.breakPoint.medium}) {
+      grid-area: 2 / 1 / 3 / 3;
+      grid-row-start: inherit;
+    }
+
+    @media (max-width: ${({ theme }) => theme.breakPoint.small}) {
+      font-size: 14px;
+      line-height: 22px;
+      grid-area: 2 / 1 / 3 / 3;
+    }
 `;
