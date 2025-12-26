@@ -7,7 +7,9 @@ export const Container = styled.main`
 `;
 
 export const Content = styled.section`
-  max-width: 1368px;
+  // max-width: 1368px;
+  max-width: 1400px;
+  padding: 0 16px;
   margin: auto;
 `;
 
@@ -36,9 +38,9 @@ export const Title = styled.h1`
 
 export const List = styled.div`
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(208px, 1fr));
   gap: 24px;
-  margin: 24px 14px 40px 14px;
+  margin: 24px 0 40px 0;
 
   @media (max-width: ${({ theme }) => theme.breakPoint.medium}px) {
     display: grid;
