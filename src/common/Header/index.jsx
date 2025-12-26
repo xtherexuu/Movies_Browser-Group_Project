@@ -1,7 +1,8 @@
-import SearchInput from "../../features/SearchInput";
+import SearchInput from "../SearchInput";
 import {
   HeaderContent,
   Heading,
+  HeadingLinkContainer,
   LinksContainer,
   NavContainer,
   StyledHeader,
@@ -14,10 +15,12 @@ const Header = () => {
     <StyledHeader>
       <HeaderContent>
         <NavContainer>
-          <StyledIcon />
-          <Heading>Movies Browser</Heading>
+          <HeadingLinkContainer to="/">
+            <StyledIcon />
+            <Heading>Movies Browser</Heading>
+          </HeadingLinkContainer>
           <LinksContainer>
-            <StyledLink to="/">MOVIES</StyledLink>
+            <StyledLink to="/movies">MOVIES</StyledLink>
             <StyledLink to="/people">PEOPLE</StyledLink>
           </LinksContainer>
         </NavContainer>
