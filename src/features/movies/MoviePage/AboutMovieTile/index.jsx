@@ -63,8 +63,8 @@ export const AboutMovieTile = ({
             </RateContainer>
             <Votes>{voteCount} votes</Votes>
           </Rating>
-          <Description>{overview}</Description>
         </Content>
+        <Description>{overview}</Description>
       </Tile>
     </Container>
   )
