@@ -32,6 +32,11 @@ export const Image = styled.img`
         min-width: 114px;
         display: grid;
         grid-template-columns: auto 1fr;
+        grid-area: unset;
+    }
+
+    @media (max-width: ${({ theme }) => theme.breakPoint.semiMedium}) {
+        grid-area: unset;
     }
 
     @media (max-width: ${({ theme }) => theme.breakPoint.small}) {
@@ -168,13 +173,6 @@ export const RateContainer = styled.div`
     margin-bottom: 16px;
 `;
 
-//export const StyledStarIcon = styled(StarIcon)`
-//  padding-top: -5px;
-//  padding-right: 8px;
-//  height: 40px;
-//  width: 40px;
-//`;
-
 export const Rate = styled.p`
     line-height: 130%;
     font-size: 30px;
@@ -236,7 +234,13 @@ export const Description = styled.p`
     @media (max-width: ${({ theme }) => theme.breakPoint.medium}) {
         grid-area: 2 / 1 / 3 / 3;
         grid-row-start: inherit;
-         margin-left: 0;
+        margin-left: 0;
+    }
+
+    @media (max-width: ${({ theme }) => theme.breakPoint.semiMedium}) {
+        grid-area: 2 / 1 / 3 / 3;
+        grid-row-start: inherit;
+        margin-left: 0;
     }
 
     @media (max-width: ${({ theme }) => theme.breakPoint.small}) {
