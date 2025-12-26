@@ -23,7 +23,7 @@ createRoot(document.getElementById("root")).render(
             <Route element={<PageLayout />}>
               <Route path="/" element={<App />} />
               <Route path="/people" element={<PeopleListPage />} />
-              <Route path="/movie/:id" element={<MoviePage />} />
+              <Route path="/movies/:id" element={<MoviePage />} />
             </Route>
           </Routes>
         </HashRouter>
