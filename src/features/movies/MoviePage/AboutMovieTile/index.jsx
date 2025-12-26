@@ -58,7 +58,7 @@ export const AboutMovieTile = ({
           <Rating>
             <RateContainer>
               <StarIcon src={starIcon} />
-              <Rate>{rate}</Rate>
+              <Rate>{rate.toFixed(1)}</Rate>
               <RateMax>/ 10</RateMax>
             </RateContainer>
             <Votes>{voteCount} votes</Votes>
