@@ -214,9 +214,11 @@ export const Votes = styled.p`
 
 export const StarIcon = styled.img`
     width: 22px;
+    margin-right: 8px;
 
     @media (max-width: ${({ theme }) => theme.breakPoint.small}) {
         width: 16px;
+        margin-right: 4px;
     }
 `;
 
