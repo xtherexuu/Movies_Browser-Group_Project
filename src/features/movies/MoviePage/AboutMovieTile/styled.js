@@ -14,7 +14,7 @@ export const Tile = styled.article`
     box-shadow: 0px 4px 12px 0px #BAC7D580;
     display: grid;
     grid-template-columns: auto 1fr;
-    grid-gap: 40px;  
+    //grid-gap: 40px;  
 
     @media (max-width: ${({ theme }) => theme.breakPoint.small}) {
         padding: 16px;
@@ -42,8 +42,10 @@ export const Image = styled.img`
 `;
 
 export const Content = styled.div`
+    margin-left: 40px;
+
     @media (max-width: ${({ theme }) => theme.breakPoint.small}) {
-        margin-left: -20px;
+        margin-left: 16px;
     }    
 `;
 
@@ -194,6 +196,7 @@ export const Rate = styled.p`
 export const RateMax = styled.p`
     font-size: 16px;
     padding-left: 7px;
+    white-space: pre;
 
     @media (max-width: ${({ theme }) => theme.breakPoint.small}) {
         display: none;
@@ -205,6 +208,7 @@ export const Votes = styled.p`
     font-size: 16px;
     font-weight: ${({ theme }) => theme.fontWeight.regular};
     padding-left: 12px;
+    white-space: pre;
 
     @media (max-width: ${({ theme }) => theme.breakPoint.small}) {
         color: ${({ theme }) => theme.color.waterloo};
@@ -226,15 +230,19 @@ export const Description = styled.p`
     grid-area: 2 / 2 / 3 / 4;
     font-size: 20px;
     line-height: 1.6;
+    margin-left: 40px;
+    text-align: justify;
 
     @media (max-width: ${({ theme }) => theme.breakPoint.medium}) {
         grid-area: 2 / 1 / 3 / 3;
         grid-row-start: inherit;
+         margin-left: 0;
     }
 
     @media (max-width: ${({ theme }) => theme.breakPoint.small}) {
         font-size: 14px;
         line-height: 22px;
+        margin-left: 0;
         grid-area: 2 / 1 / 3 / 3;
     }
 `;
