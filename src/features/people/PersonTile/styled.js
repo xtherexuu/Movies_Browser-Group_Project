@@ -9,6 +9,7 @@ export const TileLink = styled(Link)`
     cursor: pointer;
     transform: scale(1.03, 1.03);
     transition: 0.5s ease-out 0s;
+
   }
 `;
 
