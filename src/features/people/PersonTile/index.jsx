@@ -16,7 +16,7 @@ export const PersonTile = ({
           alt={name ? name : null}
         />
         <Name>{name ? name : null}</Name>
-        <FunctionName>{role ? role : null}</FunctionName>
+        { role ? <FunctionName>{role}</FunctionName> : null }
       </Tile>
     </TileLink>
   )

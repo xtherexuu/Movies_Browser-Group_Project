@@ -15,7 +15,7 @@ export const TileLink = styled(Link)`
 export const Tile = styled.article`
   min-width: 208px;
   height: 100%;
-  padding: 16px 16px 8px 16px;
+  padding: 16px;
   border-radius: 5px;
   display: grid;
   grid-template-rows: auto 1fr;
@@ -24,7 +24,7 @@ export const Tile = styled.article`
 
   @media (max-width: ${({ theme }) => theme.breakPoint.small}) {
     min-width: 136px;
-    padding: 8px 8px 0px 8px;
+    padding: 8px;
   }
 `;
 
@@ -44,12 +44,12 @@ export const Name = styled.h2`
   font-weight: ${({ theme }) => theme.fontWeight.medium};
   color: ${({ theme }) => theme.color.woodstroke};
   font-size: 22px;
-  margin: 16px 0 8px 0;
+  margin-top: 16px;
   text-align: center;
 
   @media (max-width: ${({ theme }) => theme.breakPoint.small}) {
     font-size: 18px;
-    margin: 8px 0 4px 0;
+    margin-top: 8px;
   }
 `;
 
@@ -59,7 +59,7 @@ export const FunctionName = styled.p`
   line-height: 27px;
   text-align: center;
   color: ${({ theme }) => theme.color.waterloo};
-  margin-bottom: 8px;
+  margin-top: 8px;
 
   @media (max-width: ${({ theme }) => theme.breakPoint.medium}) {
     font-size: 15px;
@@ -69,6 +69,5 @@ export const FunctionName = styled.p`
   @media (max-width: ${({ theme }) => theme.breakPoint.small}) {
     font-size: 14px;
     line-height: 18px;
-    margin: 4px 0 4px 0;
   }
 `;
