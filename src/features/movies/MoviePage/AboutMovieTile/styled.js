@@ -236,19 +236,19 @@ export const Description = styled.p`
     @media (max-width: ${({ theme }) => theme.breakPoint.medium}) {
         grid-area: 2 / 1 / 3 / 3;
         grid-row-start: inherit;
-        margin-left: 0;
+        margin: 16px 0 0 0;
     }
 
     @media (max-width: ${({ theme }) => theme.breakPoint.semiMedium}) {
         grid-area: 2 / 1 / 3 / 3;
         grid-row-start: inherit;
-        margin-left: 0;
+        margin: 16px 0 0 0;
     }
 
     @media (max-width: ${({ theme }) => theme.breakPoint.small}) {
         font-size: 14px;
         line-height: 22px;
-        margin-left: 0;
+        margin: 16px 0 0 0;
         grid-area: 2 / 1 / 3 / 3;
     }
 `;
