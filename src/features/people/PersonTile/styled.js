@@ -44,12 +44,12 @@ export const Name = styled.h2`
   font-weight: ${({ theme }) => theme.fontWeight.medium};
   color: ${({ theme }) => theme.color.woodstroke};
   font-size: 22px;
-  margin-top: 16px;
+  margin: 16px 0 8px 0;
   text-align: center;
 
   @media (max-width: ${({ theme }) => theme.breakPoint.small}) {
     font-size: 18px;
-    margin-top: 8px;
+    margin: 8px 0 8px 0;
   }
 `;
 
