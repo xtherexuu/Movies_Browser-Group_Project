@@ -58,7 +58,6 @@ export const FunctionName = styled.p`
   font-weight: ${({ theme }) => theme.fontWeight.regular};
   line-height: 27px;
   text-align: center;
-  margin-top: 8px;
   color: ${({ theme }) => theme.color.waterloo};
 
   @media (max-width: ${({ theme }) => theme.breakPoint.medium}) {
