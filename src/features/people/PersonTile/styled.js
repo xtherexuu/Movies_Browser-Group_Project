@@ -13,7 +13,7 @@ export const TileLink = styled(Link)`
 `;
 
 export const Tile = styled.article`
-  width: 208px;
+  min-width: 208px;
   height: 100%;
   padding: 16px;
   border-radius: 5px;
@@ -23,7 +23,7 @@ export const Tile = styled.article`
   background: ${({ theme }) => theme.color.white};
 
   @media (max-width: ${({ theme }) => theme.breakPoint.small}) {
-    width: 136px;
+    min-width: 136px;
     padding: 8px;
   }
 `;
@@ -51,5 +51,23 @@ export const Name = styled.h2`
     font-size: 18px;
     margin-top: 8px;
   }
+`;
 
+export const FunctionName = styled.p`
+  font-size: 18px;
+  font-weight: ${({ theme }) => theme.fontWeight.regular};
+  line-height: 27px;
+  text-align: center;
+  color: ${({ theme }) => theme.color.waterloo};
+  margin-top: 8px;
+
+  @media (max-width: ${({ theme }) => theme.breakPoint.medium}) {
+    font-size: 15px;
+    line-height: 22px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakPoint.small}) {
+    font-size: 14px;
+    line-height: 18px;
+  }
 `;
