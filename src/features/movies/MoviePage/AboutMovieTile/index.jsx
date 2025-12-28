@@ -48,7 +48,7 @@ export const AboutMovieTile = ({
           </Production>
           <Release>
             <Label>Release date:</Label>
-            {new Date(release).toLocaleDateString()}
+            {new Date(release).toLocaleDateString('en-GB')}
           </Release>
           <Tags>
             {genres.map((genre) => (
