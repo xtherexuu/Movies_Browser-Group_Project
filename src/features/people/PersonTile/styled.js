@@ -15,7 +15,7 @@ export const TileLink = styled(Link)`
 export const Tile = styled.article`
   min-width: 208px;
   height: 100%;
-  padding: 16px;
+  padding: 16px 16px 0 16px;
   border-radius: 5px;
   display: grid;
   grid-template-rows: auto 1fr;
@@ -24,7 +24,7 @@ export const Tile = styled.article`
 
   @media (max-width: ${({ theme }) => theme.breakPoint.small}) {
     min-width: 136px;
-    padding: 8px;
+    padding: 8px 8px 0 8px;
   }
 `;
 
