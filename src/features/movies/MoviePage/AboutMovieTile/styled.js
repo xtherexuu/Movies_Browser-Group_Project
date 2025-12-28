@@ -175,7 +175,7 @@ export const RateContainer = styled.div`
 
 export const Rate = styled.p`
     line-height: 130%;
-    font-size: 30px;
+    font-size: 22px;
     font-weight: ${({ theme }) => theme.fontWeight.medium};
 
     @media (max-width: ${({ theme }) => theme.breakPoint.medium}) {
@@ -192,7 +192,7 @@ export const Rate = styled.p`
 `;
 
 export const RateMax = styled.p`
-    font-size: 16px;
+    font-size: 14px;
     padding-left: 7px;
     white-space: pre;
 
@@ -203,7 +203,7 @@ export const RateMax = styled.p`
 
 export const Votes = styled.p`
     line-height: 120%;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: ${({ theme }) => theme.fontWeight.regular};
     padding-left: 12px;
     white-space: pre;
