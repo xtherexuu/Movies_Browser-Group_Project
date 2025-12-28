@@ -43,7 +43,7 @@ export const AboutMovieTile = ({
           <Year>{date ? date.toString().slice(0, 4) : null}</Year>
           <Production>
             <Label>Production:</Label>
-            {productionCountry.map((country) => country.name)}
+            {productionCountry.map((country) => country.name).join(", ")}
           </Production>
           <Release>
             <Label>Release date:</Label>
