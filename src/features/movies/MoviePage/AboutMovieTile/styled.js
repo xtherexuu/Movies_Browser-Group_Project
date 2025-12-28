@@ -14,7 +14,6 @@ export const Tile = styled.article`
     box-shadow: 0px 4px 12px 0px #BAC7D580;
     display: grid;
     grid-template-columns: auto 1fr;
-    //grid-gap: 40px;  
 
     @media (max-width: ${({ theme }) => theme.breakPoint.small}) {
         padding: 16px;
@@ -84,47 +83,47 @@ export const Year = styled.div`
 `;
 
 export const Production = styled.p`
-  font-size: 18px;
-  font-weight:${({ theme }) => theme.fontWeight.regular};
-  margin-bottom: 8px;
+    font-size: 18px;
+    font-weight:${({ theme }) => theme.fontWeight.regular};
+    margin-bottom: 8px;
 
-  @media (max-width: ${({ theme }) => theme.breakPoint.medium}) {
-      font-size: 15px;
-  }
+    @media (max-width: ${({ theme }) => theme.breakPoint.medium}) {
+        font-size: 15px;
+    }
 
-  @media (max-width: ${({ theme }) => theme.breakPoint.semiMedium}) {
-      font-size: 14px;
-  }
+    @media (max-width: ${({ theme }) => theme.breakPoint.semiMedium}) {
+        font-size: 14px;
+    }
 
-  @media (max-width: ${({ theme }) => theme.breakPoint.small}) {
-      font-size: 12px;
-  }
+    @media (max-width: ${({ theme }) => theme.breakPoint.small}) {
+        font-size: 12px;
+    }
 `;
 
 export const Label = styled.span`
-  color: ${({ theme }) => theme.color.waterloo};
-  padding-right: 10px;
+    color: ${({ theme }) => theme.color.waterloo};
+    padding-right: 10px;
 
-  @media (max-width: ${({ theme }) => theme.breakPoint.small}) {
-      display: none;
-  } 
+    @media (max-width: ${({ theme }) => theme.breakPoint.small}) {
+        display: none;
+    } 
 `;
 
 export const Release = styled.p`
-  font-size: 18px;
-  font-weight:${({ theme }) => theme.fontWeight.regular};
+    font-size: 18px;
+    font-weight:${({ theme }) => theme.fontWeight.regular};
 
-  @media (max-width: ${({ theme }) => theme.breakPoint.medium}) {
-      font-size: 15px;
-  }
+    @media (max-width: ${({ theme }) => theme.breakPoint.medium}) {
+        font-size: 15px;
+    }
 
-  @media (max-width: ${({ theme }) => theme.breakPoint.semiMedium}) {
-      font-size: 14px;
-  }
+    @media (max-width: ${({ theme }) => theme.breakPoint.semiMedium}) {
+        font-size: 14px;
+    }
 
-  @media (max-width: ${({ theme }) => theme.breakPoint.small}) {
-      font-size: 12px;
-  }
+    @media (max-width: ${({ theme }) => theme.breakPoint.small}) {
+        font-size: 12px;
+    }
 `;
 
 export const Tags = styled.ul`
@@ -169,7 +168,6 @@ export const RateContainer = styled.div`
     display: flex;
     flex-direction: row;
     align-items: baseline;
-    height: 40px;
     margin-bottom: 16px;
 `;
 
