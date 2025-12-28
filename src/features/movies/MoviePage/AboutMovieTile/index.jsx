@@ -24,7 +24,6 @@ import starIcon from "../../../../images/starIcon.svg";
 const imagesAPIw400 = "https://image.tmdb.org/t/p/w400";
 
 export const AboutMovieTile = ({
-  aboutMovie,
   poster,
   title,
   date,
