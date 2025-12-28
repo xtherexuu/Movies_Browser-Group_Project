@@ -15,6 +15,10 @@ export const Tile = styled.article`
     display: grid;
     grid-template-columns: auto 1fr;
 
+    @media (max-width: ${({ theme }) => theme.breakPoint.medium}) {
+        padding: 25px;
+    }    
+
     @media (max-width: ${({ theme }) => theme.breakPoint.small}) {
         padding: 16px;
     }    
@@ -48,7 +52,7 @@ export const Image = styled.img`
 export const Content = styled.div`
     margin-left: 40px;
 
-    @media (max-width: ${({ theme }) => theme.breakPoint.small}) {
+    @media (max-width: ${({ theme }) => theme.breakPoint.semiMedium}) {
         margin-left: 16px;
     }    
 `;
