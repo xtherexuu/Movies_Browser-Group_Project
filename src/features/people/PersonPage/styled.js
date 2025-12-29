@@ -40,6 +40,7 @@ export const PersonTile = styled.div`
   }
   @media (max-width: ${({ theme }) => theme.breakPoint.small}) {
     grid-template-columns: 116px 1fr;
+    box-shadow: 0px 4px 12px 0px #bac7d580;
   }
 `;
 
@@ -141,4 +142,7 @@ export const Credits = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(324px, 1fr));
   grid-gap: 24px;
+  @media (max-width: ${({ theme }) => theme.breakPoint.small}) {
+    grid-template-columns: repeat(auto-fill, minmax(288px, 1fr));
+  }
 `;
