@@ -37,7 +37,7 @@ export const StyledInput = styled.input`
   }
 `;
 
-export const SearchButton = styled(Link)`
+export const SearchButton = styled.div`
   padding: 12px 0px 12px 24px;
   @media (max-width: ${({ theme }) => theme.breakPoint.medium}) {
     padding: 12px 0px 12px 16px;
