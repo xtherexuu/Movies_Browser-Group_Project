@@ -49,9 +49,7 @@ export default () => {
             <PersonInformationWrapper>
               <PersonInformationContainer>
                 <PersonText $type="title">Date&nbsp;of&nbsp;birth: </PersonText>
-                <PersonText $type="info">
-                  {new Date(birthDate).toLocaleDateString("pl")}
-                </PersonText>
+                <PersonText $type="info">{birthDate}</PersonText>
               </PersonInformationContainer>
               <PersonInformationContainer>
                 <PersonText $type="title">

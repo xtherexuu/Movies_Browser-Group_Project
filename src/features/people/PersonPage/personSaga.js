@@ -28,7 +28,7 @@ async function getPersonObject(id) {
   const { cast, crew } = personCreditsRes.data;
   const personDetails = {
     name,
-    birthDate: new Date(birthday).toLocaleDateString(),
+    birthDate: new Date(birthday).toLocaleDateString("pl"),
     birthPlace: place_of_birth,
     biography,
     imageUrl: `https://image.tmdb.org/t/p/w400/${profile_path}`,
