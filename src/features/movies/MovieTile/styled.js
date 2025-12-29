@@ -16,7 +16,7 @@ export const Tile = styled.article`
   display: grid;
   grid-template-rows: auto 1fr;
   transition: 0.2s;
-  
+
   &:hover {
     cursor: pointer;
     transform: scale(1.03, 1.03);
@@ -72,7 +72,7 @@ export const Title = styled.h2`
   }
 `;
 
-export const Year = styled.p`
+export const AdditionalInfo = styled.p`
   font-size: 16px;
   line-height: 1.5;
   font-weight: 400;
@@ -83,7 +83,7 @@ export const Year = styled.p`
     font-size: 14px;
     margin: 0;
   }
-`
+`;
 export const Tags = styled.ul`
   list-style: none;
   padding-left: 0px;

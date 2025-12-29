@@ -6,10 +6,7 @@ import {
   selectMovies,
   selectMoviesStatus,
 } from "../moviesListSlice";
-import {
-  fetchSearchMovie,
-  selectSearchMovieStatus,
-} from "../movieSearchSlice";
+import { fetchSearchMovie, selectSearchMovieStatus } from "../movieSearchSlice";
 import { Header, MoviesContainer, Wrapper } from "./styled";
 import { MovieTile } from "../MovieTile";
 import { Paginator } from "../../../common/Paginator";
@@ -17,7 +14,6 @@ import { LoadingPage } from "../../../common/LoadingPage";
 import { ErrorPage } from "../../../common/ErrorPage";
 import { SearchMovie } from "../MovieSearch";
 import { useQueryParameters } from "../../queryParameters";
-
 
 export const MovieListPage = () => {
   const status = useSelector(selectMoviesStatus);
@@ -40,13 +36,12 @@ export const MovieListPage = () => {
   useEffect(() => {
     if (location.pathname.includes("/") && location.search.includes("search")) {
       dispatch(fetchSearchMovie({ query: searchQuery, page: setPage(page) }));
-    }
-    else
-      dispatch(fetchMovies(setPage(page)));
+    } else dispatch(fetchMovies(setPage(page)));
   }, [searchQuery, page]);
 
   if (status === "loading") return <LoadingPage title={pageTitle} />;
-  if (statusSearchMovie === "loading") return <LoadingPage title={"Search movie"} />
+  if (statusSearchMovie === "loading")
+    return <LoadingPage title={"Search movie"} />;
   if (status === "error") return <ErrorPage />;
   if (statusSearchMovie === "error") return <ErrorPage />;
 
@@ -56,8 +51,7 @@ export const MovieListPage = () => {
   if (status === "success" && searchQuery === null) {
     const pagesAmount = data.total_pages;
     const setPagesAmountMax = () => {
-      if (pagesAmount < APIpagesLimit)
-        return pagesAmount;
+      if (pagesAmount < APIpagesLimit) return pagesAmount;
       else return APIpagesLimit;
     };
 
@@ -71,7 +65,11 @@ export const MovieListPage = () => {
               key={`${movie.id}${movie.index}`}
               poster={movie.poster_path}
               title={movie.title}
-              date={movie.release_date}
+              additionalInfo={
+                movie.release_date
+                  ? new Date(movie.release_date).getFullYear()
+                  : null
+              }
               rate={movie.vote_average.toFixed(1)}
               voteCount={movie.vote_count}
               genres={movie.genre_ids}
@@ -81,5 +79,5 @@ export const MovieListPage = () => {
         <Paginator pagesAmount={setPagesAmountMax()} />
       </Wrapper>
     );
-  };
+  }
 };
