@@ -1,4 +1,5 @@
 import { all } from "redux-saga/effects";
+import { movieSaga } from "./features/movies/movieSaga";
 
 import { movieListSaga } from "./features/movies/moviesListSaga";
 import { peopleListSaga } from "./features/people/peopleListSaga";
@@ -13,5 +14,6 @@ export default function* rootSaga() {
     searchPersonSaga(),
     searchMovieSaga(),
     personSaga(),
+    movieSaga(),
   ]);
 }
