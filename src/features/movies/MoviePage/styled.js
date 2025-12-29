@@ -42,15 +42,15 @@ export const List = styled.div`
   gap: 24px;
   margin: 24px 0 40px 0;
 
-  @media (max-width: ${({ theme }) => theme.breakPoint.medium}px) {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 18px;
-  }
+  //@media (max-width: ${({ theme }) => theme.breakPoint.semiMedium}) {
+  //  display: grid;
+  //  grid-template-columns: repeat(2, 1fr);
+  //  gap: 18px;
+  //}
 
   @media (max-width: ${({ theme }) => theme.breakPoint.small}) {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
     grid-column-gap: 16px;
   }
 `;
