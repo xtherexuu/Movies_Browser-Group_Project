@@ -110,6 +110,7 @@ export const PersonText = styled.p`
 export const Biography = styled.p`
   grid-area: b;
   align-self: start;
+  text-align: justify;
   font-size: 20px;
   font-weight: 400;
   @media (max-width: ${({ theme }) => theme.breakPoint.medium}) {
