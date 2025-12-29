@@ -96,6 +96,14 @@ export const PersonText = styled.p`
   @media (max-width: ${({ theme }) => theme.breakPoint.semiMedium}) {
     font-size: 12px;
   }
+  @media (max-width: ${({ theme }) => theme.breakPoint.small}) {
+    & > span.firstPart {
+      display: none;
+    }
+    & > span.secoundPart {
+      text-transform: capitalize;
+    }
+  }
 `;
 
 export const Biography = styled.p`

@@ -48,7 +48,10 @@ export default () => {
             <PersonName>{name}</PersonName>
             <PersonInformationWrapper>
               <PersonInformationContainer>
-                <PersonText $type="title">Date&nbsp;of&nbsp;birth: </PersonText>
+                <PersonText $type="title">
+                  <span className="firstPart">Date&nbsp;of&nbsp;</span>
+                  <span className="secoundPart">birth</span>:{" "}
+                </PersonText>
                 <PersonText $type="info">{birthDate}</PersonText>
               </PersonInformationContainer>
               <PersonInformationContainer>
