@@ -21,7 +21,8 @@ export const MoviePage = () => {
 
   useEffect(() => {
     dispatch(fetchMovieById(id));
-  }, []);
+    console.log("eeelowina");
+  }, [id, dispatch]);
 
   if (status === "success") {
     const movieDescription = movieData.movieDescription;

@@ -33,7 +33,7 @@ export default () => {
   const loadingStatus = useSelector(selectPersonFetchStatus);
   useEffect(() => {
     dispatch(fetchPersonData(id));
-  }, []);
+  }, [id, dispatch]);
   switch (loadingStatus) {
     case "init":
       return <LoadingPage />;
