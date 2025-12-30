@@ -8,7 +8,6 @@ import { theme } from "./theme";
 import { GlobalStyle } from "./GlobalStyle";
 import { Normalize } from "styled-normalize";
 import App from "./App.jsx";
-import PageLayout from "./common/PageLayout/index.jsx";
 import { PeopleListPage } from "./features/people/PeopleList/index.jsx";
 import { MoviePage } from "./features/movies/MoviePage/index.jsx";
 import { MovieListPage } from "./features/movies/MovieList/index.jsx";
