@@ -1,7 +1,13 @@
 # Movies Browser (Group Project)
 
+A group project designed to simulate real-world front-end team collaboration and production-level code practices.
+
 A responsive movie & people search app powered by The Movie Database (TMDB).  
 Built as a group project to practice real teamwork: feature planning, consistent UI patterns, shared state management, and integrating asynchronous API flows.
+
+## Demo
+
+![This is demo of the app](./preview.gif)
 
 ## Why This Project (for a recruiter)
 
@@ -11,6 +17,7 @@ This app showcases a practical front-end setup used in real products:
 - Clean UX states (loading, error, empty results).
 - Routing + pagination + search query in URL (shareable views).
 - Reusable UI components styled with `styled-components`, built responsively.
+- Shows practical collaboration patterns used in real-world team projects.
 
 ## Features
 
@@ -32,14 +39,12 @@ This app showcases a practical front-end setup used in real products:
 
 ## Tech Stack
 
-- **React 19** + **Vite**
-- **Redux Toolkit** (store + slices)
-- **redux-saga** (async flows / side effects)
-- **react-router v7** (routing, params, URL search params)
-- **styled-components** (+ `styled-normalize`) for styling
-- **axios** for HTTP requests
-- **vite-plugin-svgr** for importing SVGs as React components
-- **gh-pages** for deployment
+- **React** + **Vite**
+- **Redux Toolkit** + **redux-saga**
+- **react-router v7**
+- **styled-components**
+- **axios**
+- **gh-pages**
 
 ## Project Structure (high level)
 
