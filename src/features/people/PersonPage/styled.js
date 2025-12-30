@@ -129,14 +129,16 @@ export const CreditsContainer = styled.div`
 export const ExperienceTypeHeading = styled.h3`
   font-weight: 600;
   font-size: 36px;
+  margin-bottom: 24px;
+  margin-top: 64px;
   @media (max-width: ${({ theme }) => theme.breakPoint.semiMedium}) {
     font-size: 27px;
+    margin-top: 24px;
+    margin-bottom: 16px;
   }
   @media (max-width: ${({ theme }) => theme.breakPoint.small}) {
     font-size: 20px;
   }
-  margin-bottom: 24px;
-  margin-top: 64px;
 `;
 
 export const Credits = styled.div`
