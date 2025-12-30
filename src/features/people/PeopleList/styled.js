@@ -9,7 +9,7 @@ export const Wrapper = styled.main`
 
 export const Header = styled.h1`
   font-size: 36px;
-  color: ${({ theme }) => theme.color.woodsmoke};
+  color: ${({ theme }) => theme.color.woodstroke};
   line-height: 1.2;
   margin-top: 54px;
   margin-left: 16px;
@@ -26,7 +26,7 @@ export const PeopleContainer = styled.section`
   grid-gap: 24px;
   margin: 16px;
 
-   @media (max-width: ${({ theme }) => theme.breakPoint.small}) {
+  @media (max-width: ${({ theme }) => theme.breakPoint.small}) {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr);

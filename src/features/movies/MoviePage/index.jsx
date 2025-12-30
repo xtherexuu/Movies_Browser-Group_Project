@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import { useLocation, useParams } from "react-router";
+import { useParams } from "react-router";
 
 import {
   fetchMovieById,
@@ -12,22 +12,17 @@ import { Container, Content, Wrapper, Title, List } from "./styled";
 import { Header } from "./BackgroundPoster";
 import { AboutMovieTile } from "./AboutMovieTile";
 import { PersonTile } from "../../people/PersonTile";
-
-export const useQueryParameters = (key) => {
-  const location = useLocation();
-  const searchParams = new URLSearchParams(location.search);
-  return searchParams.get(key);
-};
+import { ErrorPage } from "../../../common/ErrorPage";
 
 export const MoviePage = () => {
   const dispatch = useDispatch();
-  const {id} = useParams();
+  const { id } = useParams();
   const movieData = useSelector(selectMovieInfo);
   const status = useSelector(selectMovieStatus);
 
   useEffect(() => {
     dispatch(fetchMovieById(id));
-  }, []);
+  }, [id, dispatch]);
 
   if (status === "success") {
     const movieDescription = movieData.movieDescription;
@@ -86,6 +81,8 @@ export const MoviePage = () => {
           </Wrapper>
         </Content>
       </Container>
-    )
-  };
+    );
+  } else {
+    return <ErrorPage />;
+  }
 };
