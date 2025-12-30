@@ -47,21 +47,27 @@ export default () => {
           <PersonTile>
             <PersonImage src={imageUrl ? imageUrl : noPersonImage} />
             <PersonName>{name}</PersonName>
-            <PersonInformationWrapper>
-              <PersonInformationContainer>
-                <PersonText $type="title">
-                  <span className="firstPart">Date&nbsp;of&nbsp;</span>
-                  <span className="secoundPart">birth</span>:{" "}
-                </PersonText>
-                <PersonText $type="info">{birthDate}</PersonText>
-              </PersonInformationContainer>
-              <PersonInformationContainer>
-                <PersonText $type="title">
-                  Place&nbsp;of&nbsp;birth:{" "}
-                </PersonText>
-                <PersonText $type="info">{birthPlace}</PersonText>
-              </PersonInformationContainer>
-            </PersonInformationWrapper>
+            {birthDate || birthPlace ? (
+              <PersonInformationWrapper>
+                {birthDate && (
+                  <PersonInformationContainer>
+                    <PersonText $type="title">
+                      <span className="firstPart">Date&nbsp;of&nbsp;</span>
+                      <span className="secoundPart">birth</span>:{" "}
+                    </PersonText>
+                    <PersonText $type="info">{birthDate}</PersonText>
+                  </PersonInformationContainer>
+                )}
+                {birthPlace && (
+                  <PersonInformationContainer>
+                    <PersonText $type="title">
+                      Place&nbsp;of&nbsp;birth:{" "}
+                    </PersonText>
+                    <PersonText $type="info">{birthPlace}</PersonText>
+                  </PersonInformationContainer>
+                )}
+              </PersonInformationWrapper>
+            ) : null}
             <Biography>{biography}</Biography>
           </PersonTile>
           {cast?.length > 0 ? (
