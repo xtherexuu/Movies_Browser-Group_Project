@@ -83,7 +83,7 @@ export const MoviePage = () => {
         </Content>
       </Container>
     );
-  } else if (status === "loading") {
+  } else if (status === "loading" || status === "init") {
     return <LoadingPage />;
   } else {
     return <ErrorPage />;

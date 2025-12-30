@@ -5,7 +5,7 @@ const movieSlice = createSlice({
   initialState:
   {
     movieData: null,
-    status: null,
+    status: "init",
 
   },
 
