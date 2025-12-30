@@ -13,6 +13,7 @@ import { Header } from "./BackgroundPoster";
 import { AboutMovieTile } from "./AboutMovieTile";
 import { PersonTile } from "../../people/PersonTile";
 import { ErrorPage } from "../../../common/ErrorPage";
+import { LoadingPage } from "../../../common/LoadingPage";
 
 export const MoviePage = () => {
   const dispatch = useDispatch();
@@ -82,6 +83,8 @@ export const MoviePage = () => {
         </Content>
       </Container>
     );
+  } else if (status === "loading") {
+    return <LoadingPage />;
   } else {
     return <ErrorPage />;
   }
