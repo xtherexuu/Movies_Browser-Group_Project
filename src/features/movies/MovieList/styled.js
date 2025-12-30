@@ -9,14 +9,14 @@ export const Wrapper = styled.main`
 
 export const Header = styled.h1`
   font-size: 36px;
-  color: ${({ theme }) => theme.color.woodsmoke};
+  color: ${({ theme }) => theme.color.woodstroke};
   line-height: 1.2;
   margin: 56px 0 16px 16px;
-  
+
   @media (max-width: ${({ theme }) => theme.breakPoint.small}) {
     font-size: 18px;
     margin-top: 24px;
-  }    
+  }
 `;
 
 export const MoviesContainer = styled.section`
