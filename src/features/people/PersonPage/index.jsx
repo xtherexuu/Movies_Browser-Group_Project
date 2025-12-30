@@ -22,7 +22,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { LoadingPage } from "../../../common/LoadingPage";
 import { ErrorPage } from "../../../common/ErrorPage";
 import { MovieTile } from "../../movies/MovieTile";
-import { nanoid } from "@reduxjs/toolkit";
 import noPersonImage from "../../../images/noPersonImage.svg";
 
 export default () => {
