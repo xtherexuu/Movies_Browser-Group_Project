@@ -8,9 +8,8 @@ import { NoResultsPage } from "../../../common/NoResultsPage";
 
 export const SearchMovie = () => {
   const searchParams = useQueryParameters("search");
- 
-  const { results, total_pages, total_results } =
-    useSelector(selectMovie);
+
+  const { results, total_pages, total_results } = useSelector(selectMovie);
 
   if (total_results === 0) return <NoResultsPage title={searchParams} />;
   else
@@ -26,7 +25,11 @@ export const SearchMovie = () => {
               key={`${movie.id}${movie.index}`}
               poster={movie.poster_path}
               title={movie.title}
-              date={movie.release_date}
+              additionalInfo={
+                movie.release_date
+                  ? new Date(movie.release_date).getFullYear()
+                  : null
+              }
               rate={movie.vote_average.toFixed(1)}
               voteCount={movie.vote_count}
               genres={movie.genre_ids}

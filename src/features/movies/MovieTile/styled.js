@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { Link } from "react-router";
 
 export const TileLink = styled(Link)`
@@ -16,7 +16,7 @@ export const Tile = styled.article`
   display: grid;
   grid-template-rows: auto 1fr;
   transition: 0.2s;
-  
+
   &:hover {
     cursor: pointer;
     transform: scale(1.03, 1.03);
@@ -72,18 +72,34 @@ export const Title = styled.h2`
   }
 `;
 
-export const Year = styled.p`
+export const AdditionalInfo = styled.p`
   font-size: 16px;
   line-height: 1.5;
   font-weight: 400;
   color: ${({ theme }) => theme.color.silver};
   margin: 8px 0;
-
+  ${({ $hasRole }) =>
+    !$hasRole &&
+    css`
+      & > span.bracket {
+        display: none;
+      }
+    `}
   @media (max-width: ${({ theme }) => theme.breakPoint.small}) {
     font-size: 14px;
     margin: 0;
   }
-`
+  @media (max-width: ${({ theme }) => theme.breakPoint.small}) {
+    & > span.bracket {
+      display: none;
+    }
+    ${({ $hasYear }) => !$hasYear && "display: none;"}
+    & > span.role {
+      display: none;
+    }
+  }
+`;
+
 export const Tags = styled.ul`
   list-style: none;
   padding-left: 0px;
