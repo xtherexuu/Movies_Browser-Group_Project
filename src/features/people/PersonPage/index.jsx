@@ -22,7 +22,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { LoadingPage } from "../../../common/LoadingPage";
 import { ErrorPage } from "../../../common/ErrorPage";
 import { MovieTile } from "../../movies/MovieTile";
-import { nanoid } from "@reduxjs/toolkit";
 import noPersonImage from "../../../images/noPersonImage.svg";
 
 export default () => {
@@ -87,7 +86,7 @@ export default () => {
                   return (
                     <MovieTile
                       id={credit.id}
-                      key={`id-${credit.id}-${nanoid()}-cast`}
+                      key={`id-${credit.id}-${credit.character}-${credit.title}-cast`}
                       poster={credit.poster_path}
                       title={credit.title || credit.name}
                       $hasYear={hasYear}
@@ -135,7 +134,7 @@ export default () => {
                   return (
                     <MovieTile
                       id={credit.id}
-                      key={`id-${credit.id}-${nanoid()}-crew`}
+                      key={`id-${credit.id}-${credit.department}-${credit.title}-crew`}
                       poster={credit.poster_path}
                       title={credit.title || credit.name}
                       $hasYear={hasYear}

@@ -5,9 +5,9 @@ const APIkey = "f4abb2c51d8a72a2554557a4a8c06397";
 const APIlanguage = "en_US";
 const popularMovies = "/movie/popular";
 const popularPeople = "/person/popular";
-const movieById = "/movie/"
-const searchPerson ="/search/person";
-const searchMovie ="/search/movie";
+const movieById = "/movie/";
+const searchPerson = "/search/person";
+const searchMovie = "/search/movie";
 
 export const imagesFullApi = "https://image.tmdb.org/t/p";
 export const imagesAPIw400 = "https://image.tmdb.org/t/p/w400/";
@@ -17,17 +17,15 @@ const apiService = axios.create({ baseURL: `${APIbaseURL}` });
 
 export const getPopularMovies = async (page) => {
   try {
-    const response = await apiService.get(`${popularMovies}`,
-      {
-        params: {
-          api_key: `${APIkey}`,
-          language: `${APIlanguage}`,
-          page: `${page}`,
-        },
-      });
+    const response = await apiService.get(`${popularMovies}`, {
+      params: {
+        api_key: `${APIkey}`,
+        language: `${APIlanguage}`,
+        page: `${page}`,
+      },
+    });
     return response.data;
-  }
-  catch (error) {
+  } catch (error) {
     console.error("Error fetching movies", error);
     return [];
   }
@@ -35,17 +33,15 @@ export const getPopularMovies = async (page) => {
 
 export const getPopularPeople = async (page) => {
   try {
-    const response = await apiService.get(`${popularPeople}`,
-      {
-        params: {
-          api_key: `${APIkey}`,
-          language: `${APIlanguage}`,
-          page: `${page}`,
-        },
-      });
+    const response = await apiService.get(`${popularPeople}`, {
+      params: {
+        api_key: `${APIkey}`,
+        language: `${APIlanguage}`,
+        page: `${page}`,
+      },
+    });
     return response.data;
-  }
-  catch (error) {
+  } catch (error) {
     console.error("Error fetching people", error);
     return [];
   }
@@ -53,16 +49,14 @@ export const getPopularPeople = async (page) => {
 
 export const getMovieByID = async (id) => {
   try {
-    const response = await apiService.get(`${movieById}${id}`,
-      {
-        params: {
-          api_key: `${APIkey}`,
-          language: `${APIlanguage}`,
-        },
-      });
+    const response = await apiService.get(`${movieById}${id}`, {
+      params: {
+        api_key: `${APIkey}`,
+        language: `${APIlanguage}`,
+      },
+    });
     return response.data;
-  }
-  catch (error) {
+  } catch (error) {
     console.error("Error fetching movie", error);
     return [];
   }
@@ -70,16 +64,14 @@ export const getMovieByID = async (id) => {
 
 export const getCrewByID = async (id) => {
   try {
-    const response = await apiService.get(`${movieById}${id}/credits`,
-      {
-        params: {
-          api_key: `${APIkey}`,
-          language: `${APIlanguage}`,
-        },
-      });
+    const response = await apiService.get(`${movieById}${id}/credits`, {
+      params: {
+        api_key: `${APIkey}`,
+        language: `${APIlanguage}`,
+      },
+    });
     return response.data;
-  }
-  catch (error) {
+  } catch (error) {
     console.error("Error fetching movie crew.", error);
     return [];
   }
@@ -87,37 +79,33 @@ export const getCrewByID = async (id) => {
 
 export const getSearchPerson = async (query, page) => {
   try {
-    const response = await apiService.get(`${searchPerson}`,
-      {
-        params: {
-          api_key: `${APIkey}`,
-          language: `${APIlanguage}`,
-          query: `${query}`,
-          page: `${page}`,
-        },
-      });
+    const response = await apiService.get(`${searchPerson}`, {
+      params: {
+        api_key: `${APIkey}`,
+        language: `${APIlanguage}`,
+        query: `${query}`,
+        page: `${page}`,
+      },
+    });
     return response.data;
-  }
-  catch (error) {
+  } catch (error) {
     console.error("Error searching person.", error);
     return [];
   }
-}; 
+};
 
 export const getSearchMovie = async (query, page) => {
   try {
-    const response = await apiService.get(`${searchMovie}`,
-      {
-        params: {
-          api_key: `${APIkey}`,
-          language: `${APIlanguage}`,
-          query: `${query}`,
-          page: `${page}`,
-        },
-      });
+    const response = await apiService.get(`${searchMovie}`, {
+      params: {
+        api_key: `${APIkey}`,
+        language: `${APIlanguage}`,
+        query: `${query}`,
+        page: `${page}`,
+      },
+    });
     return response.data;
-  }
-  catch (error) {
+  } catch (error) {
     console.error("Error searching movie.", error);
     return [];
   }
