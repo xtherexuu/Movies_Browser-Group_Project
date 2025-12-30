@@ -68,12 +68,6 @@ This project is configured for GitHub Pages:
 
 - `npm run deploy`
 
-## Notes / Improvements (next steps)
-
-- Move the TMDB API key to environment variables (Vite `import.meta.env`) or a backend proxy to avoid exposing it in the client.
-- Add stronger error handling and runtime guards for missing API fields (dates/images).
-- Add tests (unit tests for slices/helpers, integration tests for key flows).
-
 ## Credits
 
-Group project created collaboratively: shared planning, code reviews, and consistent conventions across features.
+Group project created collaboratively with @BartekKamela and @Kantares77 on github: shared planning, code reviews, and consistent conventions across features.
