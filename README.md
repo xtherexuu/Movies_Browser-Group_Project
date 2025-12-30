@@ -1,16 +1,79 @@
-# React + Vite
+# Movies Browser (Group Project)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A group project designed to simulate real-world front-end team collaboration and production-level code practices.
 
-Currently, two official plugins are available:
+A responsive movie & people search app powered by The Movie Database (TMDB).  
+Built as a group project to practice real teamwork: feature planning, consistent UI patterns, shared state management, and integrating asynchronous API flows.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Demo
 
-## React Compiler
+![This is demo of the app](./preview.gif)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Why This Project (for a recruiter)
 
-## Expanding the ESLint configuration
+This app showcases a practical front-end setup used in real products:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- A feature-based architecture (`features/`) with predictable Redux state and side effects.
+- Clean UX states (loading, error, empty results).
+- Routing + pagination + search query in URL (shareable views).
+- Reusable UI components styled with `styled-components`, built responsively.
+- Shows practical collaboration patterns used in real-world team projects.
+
+## Features
+
+- Browse **Popular Movies** (paginated)
+- Browse **Popular People** (paginated)
+- **Search movies / people** with a debounced search input
+- **Movie details page**:
+  - poster/background header
+  - rating + votes
+  - genres, production info, overview
+  - cast & crew lists (clickable)
+- **Person details page**:
+  - name, birth date/place, biography
+  - movie credits split into cast & crew
+- UX states:
+  - loading screen
+  - error screen
+  - “no results” screen
+
+## Tech Stack
+
+- **React** + **Vite**
+- **Redux Toolkit** + **redux-saga**
+- **react-router v7**
+- **styled-components**
+- **axios**
+- **gh-pages**
+
+## Project Structure (high level)
+
+- `src/common/` – shared UI building blocks (Header, SearchInput, Paginator, Loading/Error/NoResults)
+- `src/features/movies/` – movie list, search, movie details page + Redux slices/sagas
+- `src/features/people/` – people list, search, person details page + Redux slices/sagas
+- `src/features/getData.js` – TMDB API helpers (movies/people/search/details)
+
+## Running Locally
+
+Requirements: Node.js + npm
+
+- Install dependencies: `npm install`
+- Start dev server: `npm run dev`
+- Production build: `npm run build`
+- Preview build locally: `npm run preview`
+
+## Deployment
+
+This project is configured for GitHub Pages:
+
+- `npm run deploy`
+
+## Notes / Improvements (next steps)
+
+- Move the TMDB API key to environment variables (Vite `import.meta.env`) or a backend proxy to avoid exposing it in the client.
+- Add stronger error handling and runtime guards for missing API fields (dates/images).
+- Add tests (unit tests for slices/helpers, integration tests for key flows).
+
+## Credits
+
+Group project created collaboratively: shared planning, code reviews, and consistent conventions across features.
