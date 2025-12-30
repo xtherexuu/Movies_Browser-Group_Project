@@ -23,6 +23,7 @@ import { LoadingPage } from "../../../common/LoadingPage";
 import { ErrorPage } from "../../../common/ErrorPage";
 import { MovieTile } from "../../movies/MovieTile";
 import { nanoid } from "@reduxjs/toolkit";
+import noPersonImage from "../../../images/noPersonImage.svg";
 
 export default () => {
   const { id } = useParams();
@@ -44,7 +45,7 @@ export default () => {
       return (
         <Wrapper>
           <PersonTile>
-            <PersonImage src={imageUrl} />
+            <PersonImage src={imageUrl ? imageUrl : noPersonImage} />
             <PersonName>{name}</PersonName>
             <PersonInformationWrapper>
               <PersonInformationContainer>
@@ -70,17 +71,38 @@ export default () => {
               </ExperienceTypeHeading>
               <Credits>
                 {cast.map((credit) => {
+                  const year = credit.release_date
+                    ? new Date(credit.release_date).getFullYear()
+                    : null;
+
+                  const hasRole = !!credit.character;
+                  const hasYear = !!year;
+                  const hasInfo = hasRole || hasYear;
                   return (
                     <MovieTile
                       id={credit.id}
                       key={`id-${credit.id}-${nanoid()}-cast`}
                       poster={credit.poster_path}
                       title={credit.title || credit.name}
-                      additionalInfo={`${credit.character || ""}${
-                        credit.release_date
-                          ? ` (${new Date(credit.release_date).getFullYear()})`
-                          : ""
-                      }`}
+                      $hasYear={hasYear}
+                      $hasRole={hasRole}
+                      additionalInfo={
+                        hasInfo ? (
+                          <>
+                            {hasRole && (
+                              <span className="role">{credit.character}</span>
+                            )}
+                            {hasRole && hasYear ? " " : null}
+                            {hasYear && (
+                              <>
+                                <span className="bracket">{"("}</span>
+                                <span className="year">{year}</span>
+                                <span className="bracket">{")"}</span>
+                              </>
+                            )}
+                          </>
+                        ) : null
+                      }
                       rate={credit.vote_average.toFixed(1)}
                       voteCount={credit.vote_count}
                       genres={credit.genre_ids}
@@ -97,17 +119,38 @@ export default () => {
               </ExperienceTypeHeading>
               <Credits>
                 {crew.map((credit) => {
+                  const year = credit.release_date
+                    ? new Date(credit.release_date).getFullYear()
+                    : null;
+
+                  const hasRole = !!credit.department;
+                  const hasYear = !!year;
+                  const hasInfo = hasRole || hasYear;
                   return (
                     <MovieTile
                       id={credit.id}
                       key={`id-${credit.id}-${nanoid()}-crew`}
                       poster={credit.poster_path}
                       title={credit.title || credit.name}
-                      additionalInfo={`${credit.department || ""}${
-                        credit.release_date
-                          ? ` (${new Date(credit.release_date).getFullYear()})`
-                          : ""
-                      }`}
+                      $hasYear={hasYear}
+                      $hasRole={hasRole}
+                      additionalInfo={
+                        hasInfo ? (
+                          <>
+                            {hasRole && (
+                              <span className="role">{credit.department}</span>
+                            )}
+                            {hasRole && hasYear ? " " : null}
+                            {hasYear && (
+                              <>
+                                <span className="bracket">{"("}</span>
+                                <span className="year">{year}</span>
+                                <span className="bracket">{")"}</span>
+                              </>
+                            )}
+                          </>
+                        ) : null
+                      }
                       rate={credit.vote_average.toFixed(1)}
                       voteCount={credit.vote_count}
                       genres={credit.genre_ids}

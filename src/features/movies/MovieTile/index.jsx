@@ -25,6 +25,8 @@ export const MovieTile = ({
   genres,
   rate,
   voteCount,
+  $hasYear,
+  $hasRole,
 }) => {
   const APIimage = "https://image.tmdb.org/t/p/w500/";
   const movieGenres = Genres.filter((genre) => genres.includes(genre.id));
@@ -36,7 +38,11 @@ export const MovieTile = ({
         <Details>
           <DetailsBlock>
             <Title>{title}</Title>
-            <AdditionalInfo>{additionalInfo || null}</AdditionalInfo>
+            {additionalInfo ? (
+              <AdditionalInfo $hasRole={$hasRole} $hasYear={$hasYear}>
+                {additionalInfo}
+              </AdditionalInfo>
+            ) : null}
             <Tags>
               {movieGenres.map((genre) => (
                 <Tag key={genre.id}>{genre.name}</Tag>

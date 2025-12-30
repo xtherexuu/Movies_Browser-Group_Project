@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { Link } from "react-router";
 
 export const TileLink = styled(Link)`
@@ -78,12 +78,28 @@ export const AdditionalInfo = styled.p`
   font-weight: 400;
   color: ${({ theme }) => theme.color.silver};
   margin: 8px 0;
-
+  ${({ $hasRole }) =>
+    !$hasRole &&
+    css`
+      & > span.bracket {
+        display: none;
+      }
+    `}
   @media (max-width: ${({ theme }) => theme.breakPoint.small}) {
     font-size: 14px;
     margin: 0;
   }
+  @media (max-width: ${({ theme }) => theme.breakPoint.small}) {
+    & > span.bracket {
+      display: none;
+    }
+    ${({ $hasYear }) => !$hasYear && "display: none;"}
+    & > span.role {
+      display: none;
+    }
+  }
 `;
+
 export const Tags = styled.ul`
   list-style: none;
   padding-left: 0px;
