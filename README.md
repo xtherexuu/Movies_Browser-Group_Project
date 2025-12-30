@@ -7,6 +7,8 @@ Built as a group project to practice real teamwork: feature planning, consistent
 
 ## Demo
 
+[Link to deployed live view](https://xtherexuu.github.io/Movies_Browser-Group_Project/)
+
 ![This is demo of the app](./preview.gif)
 
 ## Why This Project (for a recruiter)
