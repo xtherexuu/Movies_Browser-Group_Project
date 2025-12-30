@@ -87,7 +87,7 @@ export default () => {
                   return (
                     <MovieTile
                       id={credit.id}
-                      key={`id-${credit.id}-${nanoid()}-cast`}
+                      key={`id-${credit.id}-${credit.character}-${credit.title}-cast`}
                       poster={credit.poster_path}
                       title={credit.title || credit.name}
                       $hasYear={hasYear}
@@ -135,7 +135,7 @@ export default () => {
                   return (
                     <MovieTile
                       id={credit.id}
-                      key={`id-${credit.id}-${nanoid()}-crew`}
+                      key={`id-${credit.id}-${credit.department}-${credit.title}-crew`}
                       poster={credit.poster_path}
                       title={credit.title || credit.name}
                       $hasYear={hasYear}
