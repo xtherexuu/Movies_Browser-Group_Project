@@ -31,7 +31,9 @@ async function getPersonObject(id) {
     birthDate: new Date(birthday).toLocaleDateString("pl"),
     birthPlace: place_of_birth,
     biography,
-    imageUrl: `https://image.tmdb.org/t/p/w400/${profile_path}`,
+    imageUrl: profile_path
+      ? `https://image.tmdb.org/t/p/w400/${profile_path}`
+      : null,
     cast: [...cast],
     crew: [...crew],
   };
